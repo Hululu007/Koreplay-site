@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f4">
+  <meta name="description" content="Koreplay Android 移动客户端与独立运行时插件官方下载。">
+  <title>Koreplay | 官方下载</title>
+  <link rel="icon" href="./assets/koreplay-app.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Koreplay 首页">
+      <img src="./assets/koreplay-app.png" alt="">
+      <span>Koreplay</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#downloads">下载</a>
+      <a href="#plugins">插件</a>
+      <a href="https://github.com/ingriddaleusag-dotcom/Koreplay" target="_blank" rel="noreferrer">源码</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="live-dot"></span> Android 移动客户端</p>
+        <h1 id="page-title">Koreplay</h1>
+        <p class="lead">为 Android 手机与平板打造的媒体客户端。主程序保持精简，运行时与播放组件按需安装、独立更新。</p>
+        <div class="intro-actions">
+          <a class="button primary" href="#downloads">查看最新下载 <span aria-hidden="true">↓</span></a>
+          <span class="release-label" id="release-label">正在读取版本…</span>
+        </div>
+      </div>
+      <div class="intro-art" aria-label="Koreplay 应用图标">
+        <img src="./assets/koreplay-app.png" alt="Koreplay 应用图标">
+        <span class="art-caption">ANDROID · ARM</span>
+      </div>
+    </section>
+
+    <section class="download-section" id="downloads" aria-labelledby="download-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LATEST RELEASE <span id="release-tag"></span></p>
+          <h2 id="download-title">下载本体</h2>
+        </div>
+        <a class="text-link" id="checksums-link" href="./downloads/SHA256SUMS" download>SHA-256 校验文件 <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="host-row" id="host-download">
+        <div class="package-icon host-icon" aria-hidden="true">K</div>
+        <div class="package-info">
+          <h3>Koreplay 移动端</h3>
+          <p>通用安装包 · Android</p>
+        </div>
+        <span class="version" id="host-version">读取中</span>
+        <a class="button download-button disabled" id="host-link" href="#downloads" aria-disabled="true">准备中</a>
+      </div>
+      <p class="section-note">下载文件保存在私有 Release。请使用有 Koreplay 仓库访问权限的 GitHub 账号登录后下载；首次使用先安装本体，再按设备架构安装插件。</p>
+    </section>
+
+    <section class="plugins-section" id="plugins" aria-labelledby="plugins-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">INSTALL SEPARATELY</p>
+          <h2 id="plugins-title">运行时与组件</h2>
+        </div>
+        <div class="abi-key"><span>ARM64</span><span>ARM32</span></div>
+      </div>
+      <div class="plugin-list" id="plugin-list" aria-live="polite">
+        <p class="loading-state">正在读取官方版本清单…</p>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">ONE APP, OPTIONAL COMPONENTS</p>
+        <h2 id="about-title">按需组合，独立更新</h2>
+      </div>
+      <p>本体与界面、Java、Python、Node.js、QuickJS、Media3 和 IJK 插件分别维护版本。插件版本与本体版本独立；请按设备的 32 位或 64 位 ARM 架构选择对应包。</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>© Koreplay</span>
+    <span>仅提供客户端软件，不提供影视内容或第三方接口。</span>
+    <a href="https://github.com/ingriddaleusag-dotcom/Koreplay/blob/main/LICENSE" target="_blank" rel="noreferrer">AGPL-3.0</a>
+  </footer>
+</body>
+</html>
