@@ -1,4 +1,4 @@
-cc820091873cd7543a8fa8a8743a6f52b5aa38c2a3f2f96687b50164901379fa  Koreplay-mobile-universal-v1.0.1.apk
+d79c11a1328794499a2d4dc4b253ff27cc26babcf50af82fc8ae45995665cc0b  Koreplay-mobile-universal-v1.0.2.apk
 70700cc1b8c5b8ce0101e0114d1a4c9ff1913d0e55105627f659be8ce3deed42  ijk-arm64-v8a-v1.0.0.koreplugin
 6ec8f8e4254b4c067c73a5a447c1e11d7b74739a52ee37d8cb8440d5cd136165  ijk-armeabi-v7a-v1.0.0.koreplugin
 7fd77c3cabc68bb9c9578dd8598aa37336bc8937626f4ad3df45a2ca33c5791d  java-arm64-v8a-v1.0.0.koreplugin
@@ -11,5 +11,5 @@ bf200889f676ef4f6b5cc9347b9840b3cc8c8f71319c29f75d2d2e858f01bf92  python-arm64-v
 0aeba3a513051fabc2d3646e42febad4f5718f01d41a2495db03a6473e0a9a00  python-armeabi-v7a-v1.0.0.koreplugin
 0bc2e94b5629567c8909381138d09951645461f6818baabdc4981163fb58ffed  quickjs-arm64-v8a-v1.0.0.koreplugin
 13bfe1234e6aba6a414a9bd5682766f7745ad267e1bdccdf9bd274a413ba82a9  quickjs-armeabi-v7a-v1.0.0.koreplugin
-401706eb37c0ec9a773bcb740f674fe3169261e9c6de4989fa5481677fa95553  ui-arm64-v8a-v1.0.1.koreplugin
-c6f9e2ff332d9086450a5aabc2e2b9f9149e93c7f909169d1cbd142d7a6604bd  ui-armeabi-v7a-v1.0.1.koreplugin
+6e3021f3a025d14f5d7aa355757cc205ed45dc6a2ecf4c4796c2f2bb251fcd61  ui-arm64-v8a-v1.0.2.koreplugin
+a6b01e4477d713bd59fa5cff11e92a7308fe1591b1e29195ec2af6b464c58b43  ui-armeabi-v7a-v1.0.2.koreplugin
