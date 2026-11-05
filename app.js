@@ -13,6 +13,8 @@ const THEMES = [
 
 const THEME_KEY = "koreplay.theme";
 const ABI_KEY = "koreplay.abi";
+// Deploys stamp a ?v=<build> onto app.js; theme files reuse it so a release never mixes cached files.
+const BUILD = new URL(import.meta.url).search;
 const motionQuery = matchMedia("(prefers-reduced-motion: reduce)");
 
 const store = {
@@ -121,7 +123,7 @@ function loadCss(href) {
 function loadTheme(id) {
   if (!themeCache.has(id)) {
     const base = `./themes/${id}/`;
-    const pending = Promise.all([import(`${base}index.js`), loadCss(`${base}style.css`)])
+    const pending = Promise.all([import(`${base}index.js${BUILD}`), loadCss(`${base}style.css${BUILD}`)])
       .then(([module]) => module.default)
       .catch((error) => {
         themeCache.delete(id);
