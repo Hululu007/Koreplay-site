@@ -60,11 +60,11 @@ html[data-theme="cinema"] { scroll-behavior: smooth; background: #0d0b09; }
 .cn-leader-sweep {
   position: absolute;
   inset: -2px;
-  background: conic-gradient(rgba(236, 228, 212, .38) 0deg, rgba(236, 228, 212, .38) var(--a, 0deg), transparent var(--a, 0deg));
+  background: conic-gradient(rgba(236, 228, 212, .38) 0deg, rgba(236, 228, 212, .38) var(--cn-sweep, 0deg), transparent var(--cn-sweep, 0deg));
   animation: cn-sweep .7s linear forwards;
 }
-@property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
-@keyframes cn-sweep { to { --a: 360deg; } }
+@property --cn-sweep { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes cn-sweep { to { --cn-sweep: 360deg; } }
 .cn-cross-h, .cn-cross-v { position: absolute; background: rgba(236, 228, 212, .6); }
 .cn-cross-h { left: 0; right: 0; top: 50%; height: 2px; }
 .cn-cross-v { top: 0; bottom: 0; left: 50%; width: 2px; }

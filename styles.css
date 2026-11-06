@@ -104,21 +104,247 @@ html[data-scheme="light"] .core-dock {
 .core-dock-icon { width: 20px; height: 20px; transition: transform .5s cubic-bezier(.2, .8, .2, 1); }
 .core-dock.is-open .core-dock-icon { transform: rotate(-120deg); }
 
+/* First-visit hint: rotating colour ring on the button plus a bubble that cycles through themes. */
+.core-dock-toggle { position: relative; isolation: isolate; }
+.core-dock.is-hinting .core-dock-toggle::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(from var(--hint-angle), var(--hint-stops));
+  animation: core-spin 2.4s linear infinite;
+}
 .core-dock.is-hinting .core-dock-toggle::after {
   content: "";
   position: absolute;
-  inset: -1px;
+  inset: -3px;
+  z-index: -2;
   border-radius: inherit;
-  border: 2px solid currentColor;
-  opacity: 0;
-  animation: core-ping 2s ease-out 3;
+  background: conic-gradient(from var(--hint-angle), var(--hint-stops));
+  filter: blur(14px);
+  opacity: .7;
+  animation: core-spin 2.4s linear infinite, core-glow 1.6s ease-in-out infinite alternate;
+}
+.core-dock.is-hinting .core-dock-icon { animation: core-wiggle 2.4s ease-in-out infinite; }
+@property --hint-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes core-spin { to { --hint-angle: 360deg; } }
+@keyframes core-glow { from { opacity: .35; transform: scale(.96); } to { opacity: .85; transform: scale(1.12); } }
+@keyframes core-wiggle {
+  0%, 70%, 100% { transform: rotate(0); }
+  76% { transform: rotate(-18deg); }
+  84% { transform: rotate(14deg); }
+  92% { transform: rotate(-8deg); }
+}
+
+/* Centred theme hint, shown on every page load */
+.core-hint-layer {
+  --hint-accent: #8ab4ff;
+  position: fixed;
+  inset: 0;
+  z-index: 960;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  font-family: "HarmonyOS Sans SC", "MiSans", "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif;
+}
+.core-hint-layer[hidden] { display: none; }
+.core-hint-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 60% at 50% 50%, rgba(10, 12, 20, .35), rgba(10, 12, 20, .62));
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  animation: core-fade .4s ease both;
+}
+.core-hint-layer.is-leaving .core-hint-backdrop { animation: core-fade-out .5s ease forwards; }
+@keyframes core-fade { from { opacity: 0; } }
+@keyframes core-fade-out { to { opacity: 0; } }
+
+.core-hint-card {
+  --dock-bg: rgba(255, 255, 255, .9);
+  --dock-ink: #111827;
+  --dock-muted: rgba(17, 24, 39, .58);
+  --dock-line: rgba(17, 24, 39, .1);
+  --dock-hover: rgba(17, 24, 39, .05);
+  position: relative;
+  width: min(560px, 100%);
+  padding: 30px 30px 24px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--dock-bg);
+  color: var(--dock-ink);
+  box-shadow: 0 0 0 1px var(--dock-line), 0 40px 120px -30px rgba(0, 0, 0, .65), 0 0 90px -30px var(--hint-accent);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  animation: core-card-in .7s cubic-bezier(.2, .9, .2, 1.15) both;
+  transition: box-shadow .5s ease;
+  isolation: isolate;
+  will-change: transform, opacity;
+}
+html[data-scheme="dark"] .core-hint-card {
+  --dock-bg: rgba(22, 24, 34, .88);
+  --dock-ink: #f5f6f8;
+  --dock-muted: rgba(245, 246, 248, .62);
+  --dock-line: rgba(255, 255, 255, .12);
+  --dock-hover: rgba(255, 255, 255, .08);
+}
+/* A slow colour wash behind the content, tinted by the theme being previewed */
+.core-hint-card::before {
+  content: "";
+  position: absolute;
+  inset: -40% -20% auto;
+  height: 120%;
+  z-index: -1;
+  background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--hint-accent) 32%, transparent), transparent 70%);
+  animation: core-wash 6s ease-in-out infinite alternate;
   pointer-events: none;
 }
-.core-dock-toggle { position: relative; }
-@keyframes core-ping {
-  0% { opacity: .6; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1.35); }
+@keyframes core-wash { to { transform: translate(8%, 6%) scale(1.1); } }
+@keyframes core-card-in { from { opacity: 0; transform: translateY(26px) scale(.92); } }
+
+.core-hint-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--dock-hover);
+  color: var(--dock-muted);
+  cursor: pointer;
 }
+.core-hint-close:hover { color: var(--dock-ink); }
+.core-hint-close .icon { width: 16px; height: 16px; }
+
+.core-hint-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 5px 12px 5px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--hint-accent) 16%, transparent);
+  color: color-mix(in srgb, var(--hint-accent) 70%, var(--dock-ink));
+  font-size: 13px;
+  font-weight: 700;
+  transition: background-color .5s ease, color .5s ease;
+}
+.core-hint-kicker .icon { width: 18px; height: 18px; animation: core-wiggle 2.4s ease-in-out infinite; }
+.core-hint-title { margin: 14px 0 0; font-size: clamp(22px, 4vw, 28px); line-height: 1.25; font-weight: 800; letter-spacing: -.01em; }
+.core-hint-line { display: grid; gap: 2px; min-height: 48px; margin: 10px 0 18px; }
+.core-hint-name { color: color-mix(in srgb, var(--hint-accent) 75%, var(--dock-ink)); font-size: 16px; transition: color .4s ease; }
+.core-hint-desc { color: var(--dock-muted); font-size: 14px; line-height: 1.55; }
+
+.core-hint-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.core-hint-tile {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: 8px 8px 10px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--dock-hover);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  animation: core-tile-in .5s cubic-bezier(.2, .9, .3, 1.3) both;
+  animation-delay: calc(.18s + var(--i) * 45ms);
+  transition: transform .25s cubic-bezier(.3, 1.6, .5, 1), box-shadow .25s ease, background-color .25s ease;
+}
+@keyframes core-tile-in { from { opacity: 0; transform: translateY(12px) scale(.9); } }
+.core-hint-swatch {
+  position: relative;
+  display: block;
+  height: 54px;
+  overflow: hidden;
+  border-radius: 11px;
+  background: var(--hc-a);
+  box-shadow: inset 0 0 0 1px var(--dock-line);
+}
+.core-hint-swatch i { position: absolute; border-radius: 50%; }
+.core-hint-swatch i:nth-child(1) { width: 34px; height: 34px; left: 10%; top: 18%; background: var(--hc-b); }
+.core-hint-swatch i:nth-child(2) { width: 18px; height: 18px; right: 12%; bottom: 14%; background: var(--hc-c); }
+.core-hint-swatch i:nth-child(3) { inset: auto 0 0; height: 30%; border-radius: 0; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--hc-c) 30%, transparent)); }
+.core-hint-tile-name { padding-left: 2px; font-size: 13px; font-weight: 700; }
+.core-hint-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: none;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .55);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+.core-hint-tile.is-current .core-hint-tag { display: block; }
+.core-hint-tile:hover, .core-hint-tile.is-on {
+  transform: translateY(-4px);
+  background: color-mix(in srgb, var(--hc-c) 14%, var(--dock-hover));
+  box-shadow: 0 0 0 2px var(--hc-c), 0 14px 30px -14px var(--hc-c);
+}
+.core-hint-tile:focus-visible { outline: 2px solid #8ab4ff; outline-offset: 2px; }
+
+.core-hint-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 22px; }
+.core-hint-primary {
+  height: 44px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--dock-ink);
+  color: var(--dock-bg);
+  font: inherit;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.core-hint-primary:focus-visible { outline: 2px solid #8ab4ff; outline-offset: 3px; }
+.core-hint-foot { color: var(--dock-muted); font-size: 13px; }
+
+/* Countdown bar along the bottom edge; pauses while the pointer is on the card */
+.core-hint-timer { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--dock-line); }
+.core-hint-timer i {
+  display: block;
+  height: 100%;
+  background: var(--hint-accent);
+  transform-origin: left;
+  animation: core-countdown var(--hint-ms) linear forwards;
+  transition: background-color .4s ease;
+}
+.core-hint-layer.is-paused .core-hint-timer i { animation-play-state: paused; }
+.core-hint-layer.is-sticky .core-hint-timer { display: none; }
+@keyframes core-countdown { to { transform: scaleX(0); } }
+
+/* The theme button bumps when the card lands in it */
+.core-dock-toggle.is-landed { animation: core-land .6s cubic-bezier(.3, 1.8, .5, 1); }
+@keyframes core-land { 30% { transform: scale(1.22); } 60% { transform: scale(.94); } }
+
+@media (max-width: 680px) {
+  .core-hint-layer { padding: 16px; }
+  .core-hint-card { padding: 24px 18px 20px; border-radius: 24px; }
+  .core-hint-grid { gap: 7px; }
+  .core-hint-tile { padding: 6px 6px 8px; border-radius: 13px; }
+  .core-hint-swatch { height: 40px; border-radius: 9px; }
+  .core-hint-swatch i:nth-child(1) { width: 24px; height: 24px; }
+  .core-hint-swatch i:nth-child(2) { width: 12px; height: 12px; }
+  .core-hint-tile-name { padding: 0; font-size: 11.5px; text-align: center; }
+  .core-hint-tag { top: 8px; left: 8px; font-size: 9.5px; }
+  .core-hint-actions { flex-direction: column; align-items: stretch; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .core-hint-card, .core-hint-card::before, .core-hint-backdrop, .core-hint-tile, .core-hint-kicker .icon, .core-dock-toggle.is-landed { animation: none; }
+  .core-hint-tile { transition: none; }
+  .core-hint-timer i { animation-duration: var(--hint-ms); }
+}
+
 
 .core-theme-panel {
   width: min(340px, calc(100vw - 40px));
@@ -243,6 +469,8 @@ html[data-scheme="light"] .core-dock {
 @media (prefers-reduced-motion: reduce) {
   .core-boot img,
   .core-theme-panel,
+  .core-dock.is-hinting .core-dock-icon,
+  .core-dock.is-hinting .core-dock-toggle::before,
   .core-dock.is-hinting .core-dock-toggle::after { animation: none; }
   .core-dock-icon, .core-dock-toggle { transition: none; }
 }

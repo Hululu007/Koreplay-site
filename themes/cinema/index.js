@@ -1,4 +1,5 @@
 import { ABIS, ABI_HINT, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, clamp, disposer, downloadLink, formatSize, h, icon } from "../kit.js";
+import { gallery } from "../gallery.js";
 
 function grainTiles(count = 4, size = 160) {
   const canvas = document.createElement("canvas");
@@ -239,7 +240,7 @@ export default {
       h("p", { class: "cn-fin" }, "完"));
     const credits = h("section", { class: "cn-credits", id: "cn-credits", "aria-label": "片尾字幕" }, roll);
 
-    root.append(grain, nav, h("main", null, hero, slate, reel, board, credits));
+    root.append(grain, nav, h("main", null, hero, gallery({ id: "cn-screens", layout: "strip", variant: "cinema", title: "片场剧照", lead: "一格一个界面。内容与播放用骨架示意，不出现任何影片画面；配置页为真实截图。" }), slate, reel, board, credits));
 
     /* scroll-driven */
     const onScroll = () => {

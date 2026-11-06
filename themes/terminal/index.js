@@ -1,4 +1,5 @@
 import { ABIS, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, disposer, downloadLink, formatSize, h } from "../kit.js";
+import { gallery } from "../gallery.js";
 
 const LOGO = [
   "   ▄▄▄▄▄▄▄▄▄▄▄   ",
@@ -83,7 +84,7 @@ export default {
     const rain = h("canvas", { class: "tm-rain", "aria-hidden": "true" });
     const crt = h("div", { class: "tm-crt" }, topBar, h("div", { class: "tm-grid" }, termPane, sidePane), statusBar, rain);
     const note = h("p", { class: "tm-note" }, DISCLAIMER);
-    root.append(h("main", { class: "tm-wrap" }, crt, note));
+    root.append(h("main", { class: "tm-wrap" }, crt, gallery({ id: "tm-screens", layout: "stage", variant: "terminal", title: "$ koreplay --screens", lead: "骨架渲染的内容页与播放页，加上配置页实拍。左侧选择，右侧逐项标注控件。" }), note));
 
     /* ---------- output helpers ---------- */
     const scrollDown = () => { screen.scrollTop = screen.scrollHeight; };

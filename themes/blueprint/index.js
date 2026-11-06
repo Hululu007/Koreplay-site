@@ -1,4 +1,5 @@
 import { ABIS, ABI_HINT, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, disposer, downloadLink, formatSize, h, icon, s } from "../kit.js";
+import { gallery } from "../gallery.js";
 
 const HOST = { x: 420, y: 230, w: 160, h: 170 };
 const MODULES = [
@@ -241,7 +242,7 @@ export default {
           h("tr", null, h("th", { scope: "row" }, "许可"), h("td", null, h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0")), h("th", { scope: "row" }, "上游"), h("td", null, h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "TVBoxOS"))))));
 
     const cross = h("div", { class: "bp-cross", "aria-hidden": "true" }, h("i", { class: "bp-cross-x" }), h("i", { class: "bp-cross-y" }), h("span", { class: "bp-cross-label" }));
-    root.append(nav, h("main", null, hero, bom, assembly, notes), cross);
+    root.append(nav, h("main", null, hero, gallery({ id: "bp-screens", layout: "stage", variant: "blueprint", title: "界面详图", groupLabel: (g) => `${g}  /  ${ {内容: "C", 播放: "P", 配置: "S"}[g] }`, itemLabel: (s, i) => `${String(i + 1).padStart(2, "0")}  ${s.label}` }), bom, assembly, notes), cross);
 
     renderBom();
     d.add(ctx.onAbi(() => {

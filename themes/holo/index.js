@@ -1,4 +1,5 @@
 import { ABIS, ABI_HINT, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, clamp, disposer, downloadLink, formatSize, h, icon, loop } from "../kit.js";
+import { gallery } from "../gallery.js";
 
 const TAU = Math.PI * 2;
 const ORDER = ["ui", "java", "python", "node", "quickjs", "media3", "ijk"];
@@ -161,7 +162,7 @@ export default {
         h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS")));
 
     const scan = h("div", { class: "ho-scanline", "aria-hidden": "true" });
-    root.append(hex, scan, nav, h("main", null, hero, modules, sequence, security), footer);
+    root.append(hex, scan, nav, h("main", null, hero, gallery({ id: "ho-screens", layout: "stage", variant: "holo", title: "界面采样", itemLabel: (s, i) => `S-${String(i + 1).padStart(2, "0")}  ${s.label}` }), modules, sequence, security), footer);
 
     /* ---------------- module deck ---------------- */
     const card = (pkg, meta, kind, index) => {

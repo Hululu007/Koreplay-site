@@ -245,7 +245,165 @@ const panel = h("div", { class: "core-theme-panel", id: "core-theme-panel", role
   h("div", { class: "core-theme-list" }, options),
   h("p", { class: "core-theme-hint" }, "主题只改变外观，下载内容完全相同。也可以在网址后加 ?theme= 直接分享某套主题。"));
 
+/* ---------- theme hint: centred card on every page load ---------- */
+
+const HINT_MS = 10000;
+const hintName = h("b", { class: "core-hint-name" });
+const hintDesc = h("span", { class: "core-hint-desc" });
+const hintTiles = THEMES.map((theme, i) => h("button", {
+  class: "core-hint-tile",
+  type: "button",
+  "data-theme-id": theme.id,
+  "aria-label": `切换到${theme.name}主题`,
+  style: { "--hc-a": theme.swatch[0], "--hc-b": theme.swatch[1], "--hc-c": theme.swatch[2], "--i": i },
+  onclick: (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    closeHint({ fly: false });
+    switchTheme(theme.id, { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+  },
+  onpointerenter: () => showHintTheme(i, true),
+  onfocus: () => showHintTheme(i, true),
+},
+h("span", { class: "core-hint-swatch", "aria-hidden": "true" }, h("i"), h("i"), h("i")),
+h("span", { class: "core-hint-tile-name" }, theme.name),
+h("span", { class: "core-hint-tag" }, "当前")));
+
+const hintCard = h("div", { class: "core-hint-card", role: "dialog", "aria-modal": "true", "aria-labelledby": "core-hint-title" },
+  h("button", { class: "core-hint-close", type: "button", "aria-label": "关闭提示", onclick: () => closeHint() }, icon("close")),
+  h("p", { class: "core-hint-kicker" }, icon("palette"), h("span", null, `${THEMES.length} 套主题`)),
+  h("h2", { class: "core-hint-title", id: "core-hint-title" }, "这个网站可以换风格"),
+  h("p", { class: "core-hint-line", "aria-live": "polite" }, hintName, hintDesc),
+  h("div", { class: "core-hint-grid" }, hintTiles),
+  h("div", { class: "core-hint-actions" },
+    h("button", { class: "core-hint-primary", type: "button", onclick: () => closeHint() }, "先看当前主题"),
+    h("span", { class: "core-hint-foot" }, "之后随时点右下角「主题」更换")),
+  h("div", { class: "core-hint-timer", "aria-hidden": "true" }, h("i")));
+const hintLayer = h("div", { class: "core-hint-layer", hidden: true, style: { "--hint-ms": `${HINT_MS}ms` } },
+  h("div", { class: "core-hint-backdrop", onclick: () => closeHint() }),
+  hintCard);
+
+let hintIndex = 0;
+let hintTimer = 0;
+let hintAutoHide = 0;
+let hintLeft = HINT_MS;
+let hintSince = 0;
+let hintRunning = false;
+
+function showHintTheme(i, hold = false) {
+  hintIndex = i;
+  const theme = THEMES[i];
+  hintTiles.forEach((tile, k) => tile.classList.toggle("is-on", k === i));
+  hintName.textContent = theme.name;
+  hintDesc.textContent = theme.desc;
+  hintCard.style.setProperty("--hint-accent", theme.swatch[2]);
+  if (hold) clearInterval(hintTimer);
+}
+
+function hintResume() {
+  if (hintRunning || hintLeft === Infinity || hintLayer.hidden) return;
+  hintRunning = true;
+  hintSince = performance.now();
+  hintAutoHide = setTimeout(() => closeHint(), hintLeft);
+  hintLayer.classList.remove("is-paused");
+}
+
+function hintPause() {
+  if (!hintRunning) return;
+  hintRunning = false;
+  clearTimeout(hintAutoHide);
+  hintLeft -= performance.now() - hintSince;
+  hintLayer.classList.add("is-paused");
+}
+
+const onHintVisibility = () => (document.hidden ? hintPause() : hintResume());
+
+function startHint() {
+  if (state.theme == null || !panel.hidden) return;
+  if (document.hidden) {
+    document.addEventListener("visibilitychange", startHint, { once: true });
+    return;
+  }
+  hintTiles.forEach((tile) => tile.classList.toggle("is-current", tile.dataset.themeId === state.theme));
+  // Preview starts on the theme after the current one, so the first thing shown is new.
+  showHintTheme((THEMES.findIndex((t) => t.id === state.theme) + 1) % THEMES.length);
+  hintLeft = new URLSearchParams(location.search).has("hint") ? Infinity : HINT_MS;
+  hintLayer.classList.toggle("is-sticky", hintLeft === Infinity);
+  hintLayer.hidden = false;
+  dock.classList.add("is-hinting");
+  if (!ctx.reducedMotion) hintTimer = setInterval(() => showHintTheme((hintIndex + 1) % THEMES.length), 1800);
+  document.addEventListener("visibilitychange", onHintVisibility);
+  hintResume();
+  hintCard.querySelector(".core-hint-primary").focus({ preventScroll: true });
+}
+
+function closeHint({ fly = true } = {}) {
+  if (hintLayer.hidden || hintLayer.classList.contains("is-leaving")) return;
+  clearInterval(hintTimer);
+  hintPause();
+  hintRunning = false;
+  document.removeEventListener("visibilitychange", onHintVisibility);
+  const hadFocus = hintCard.contains(document.activeElement);
+  hintLayer.classList.add("is-leaving");
+  let finished = false;
+  const done = () => {
+    if (finished) return;
+    finished = true;
+    hintLayer.hidden = true;
+    hintLayer.classList.remove("is-leaving", "is-paused");
+    hintCard.getAnimations().forEach((a) => a.cancel());
+    if (hadFocus) toggle.focus({ preventScroll: true });
+  };
+  if (fly && !ctx.reducedMotion && !document.hidden && hintCard.animate) {
+    // Shrink the card into the theme button so people see where it lives.
+    const from = hintCard.getBoundingClientRect();
+    const to = toggle.getBoundingClientRect();
+    const dx = to.left + to.width / 2 - (from.left + from.width / 2);
+    const dy = to.top + to.height / 2 - (from.top + from.height / 2);
+    const scale = Math.max(0.06, to.height / from.height);
+    hintCard.animate(
+      [
+        { transform: "translate(0, 0) scale(1)", opacity: 1, borderRadius: "28px" },
+        { transform: `translate(${dx * 0.55}px, ${dy * 0.55}px) scale(${0.5})`, opacity: 0.85, borderRadius: "48px", offset: 0.55 },
+        { transform: `translate(${dx}px, ${dy}px) scale(${scale})`, opacity: 0, borderRadius: "999px" },
+      ],
+      { duration: 680, easing: "cubic-bezier(.55, 0, .2, 1)", fill: "forwards" },
+    ).finished.then(done, done);
+    setTimeout(done, 900);
+    // The button answers with a bump and keeps its colour ring for a few seconds.
+    setTimeout(() => {
+      toggle.classList.remove("is-landed");
+      void toggle.offsetWidth;
+      toggle.classList.add("is-landed");
+    }, 560);
+    setTimeout(() => dock.classList.remove("is-hinting"), 4200);
+  } else {
+    dock.classList.remove("is-hinting");
+    setTimeout(done, 220);
+  }
+}
+
+hintLayer.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeHint();
+  }
+});
+hintCard.addEventListener("pointerenter", hintPause);
+hintCard.addEventListener("pointerleave", hintResume);
+
+function maybeHint() {
+  // Shown on every page load. Wait out the cinema theme's opening countdown first.
+  let waited = 0;
+  const check = () => {
+    waited += 300;
+    if (document.querySelector(".cn-leader") && waited < 8000) return setTimeout(check, 300);
+    setTimeout(startHint, 700);
+  };
+  setTimeout(check, 300);
+}
+
 const dock = h("div", { class: "core-dock" }, panel, toggle);
+dock.style.setProperty("--hint-stops", [...THEMES.map((t) => t.swatch[2]), THEMES[0].swatch[2]].join(", "));
 
 function syncDock() {
   for (const option of options) {
@@ -259,7 +417,7 @@ function openPanel() {
   panel.hidden = false;
   toggle.setAttribute("aria-expanded", "true");
   dock.classList.add("is-open");
-  dock.classList.remove("is-hinting");
+  closeHint({ fly: false });
   (options.find((option) => option.classList.contains("is-active")) || options[0]).focus({ preventScroll: true });
 }
 
@@ -310,11 +468,8 @@ async function boot() {
     [theme] = await Promise.all([loadTheme(id), manifestReady]);
   }
   mount(id, theme);
-  document.body.append(dock);
-  if (!store.get(THEME_KEY)) {
-    dock.classList.add("is-hinting");
-    setTimeout(() => dock.classList.remove("is-hinting"), 6000);
-  }
+  document.body.append(hintLayer, dock);
+  maybeHint();
   // Warm the cache for the other themes once the page is idle.
   const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));
   idle(() => THEMES.forEach((item) => item.id !== id && loadTheme(item.id).catch(() => {})));
