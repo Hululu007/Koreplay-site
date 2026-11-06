@@ -346,6 +346,17 @@ function stageLayout(root, opts) {
     current = i;
     fits.forEach((f, k) => f.classList.toggle("is-on", k === i));
     items.forEach((b, k) => b.setAttribute("aria-selected", String(k === i)));
+    // In the narrow layout the list is a horizontal tab row: keep the selected tab in view
+    // without scrolling the page itself.
+    if (list.scrollWidth > list.clientWidth + 1) {
+      const b = items[i];
+      const target = b.offsetLeft - (list.clientWidth - b.offsetWidth) / 2;
+      const left = Math.max(0, Math.min(target, list.scrollWidth - list.clientWidth));
+      if (prev && !reduced() && "scrollBehavior" in list.style) list.scrollTo({ left, behavior: "smooth" });
+      // Smooth scrolling can stall when the page is not being painted; make sure it lands.
+      setTimeout(() => { if (Math.abs(list.scrollLeft - left) > 2) list.scrollLeft = left; }, 450);
+      if (!prev || reduced()) list.scrollLeft = left;
+    }
     const f = fits[i];
     main.classList.toggle("is-land", !!f.screen.landscape);
     fitAll();
