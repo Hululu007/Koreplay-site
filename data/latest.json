@@ -1,19 +1,19 @@
 {
-  "releaseTag": "v1.1.3-build.4",
-  "releaseName": "Koreplay v1.1.3-build.4",
-  "publishedAt": "2026-11-06T07:53:47Z",
-  "hostVersion": "1.0.3",
+  "releaseTag": "v1.1.3-build.5",
+  "releaseName": "Koreplay v1.1.3-build.5",
+  "publishedAt": "2026-11-06T14:01:30Z",
+  "hostVersion": "1.0.4",
   "hostApi": 1,
   "packages": [
     {
       "id": "host",
       "abi": "all",
-      "version": "1.0.3",
-      "file": "Koreplay-mobile-universal-v1.0.3.apk",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.4/Koreplay-mobile-universal-v1.0.3.apk",
-      "releaseTag": "v1.1.3-build.4",
+      "version": "1.0.4",
+      "file": "Koreplay-mobile-universal-v1.0.4.apk",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.5/Koreplay-mobile-universal-v1.0.4.apk",
+      "releaseTag": "v1.1.3-build.5",
       "size": 12628195,
-      "sha256": "125eee7731d88cf335fd9acbef0c5ba723014190e57bad86cc1556706eb424ab"
+      "sha256": "6e065d546155f142955b1dc752c1453ae48d28dd6928fa207f528760a1f74d90"
     },
     {
       "id": "ijk",
@@ -138,22 +138,52 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.3",
-      "file": "ui-arm64-v8a-v1.0.3.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.4/ui-arm64-v8a-v1.0.3.koreplugin",
-      "releaseTag": "v1.1.3-build.4",
-      "size": 2839865,
-      "sha256": "c273621c23b54e038e52968a38dec77907dcedc87c4fdbe030b1411016614202"
+      "version": "1.0.4",
+      "file": "ui-arm64-v8a-v1.0.4.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.5/ui-arm64-v8a-v1.0.4.koreplugin",
+      "releaseTag": "v1.1.3-build.5",
+      "size": 2840630,
+      "sha256": "fb1f83ef4ac9f82cf6fac377fbcf22af1e3d939d361027536ba23e96c0f3cf88"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.3",
-      "file": "ui-armeabi-v7a-v1.0.3.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.4/ui-armeabi-v7a-v1.0.3.koreplugin",
-      "releaseTag": "v1.1.3-build.4",
-      "size": 2839548,
-      "sha256": "35ea6bc916c1405b9b25dfd56ecd51c3a2cade93c9404e65865fc99b055f0249"
+      "version": "1.0.4",
+      "file": "ui-armeabi-v7a-v1.0.4.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.5/ui-armeabi-v7a-v1.0.4.koreplugin",
+      "releaseTag": "v1.1.3-build.5",
+      "size": 2840314,
+      "sha256": "fbeb22d6df678a79702b6ae095981d1d7c156a82c409db0e627ddb994cffcb19"
+    },
+    {
+      "id": "demo",
+      "abi": "arm64-v8a",
+      "version": "1.0.0",
+      "name": "计算器 Demo",
+      "description": "独立扩展示例：表达式计算、状态管理与结果弹窗",
+      "kind": "extension",
+      "mark": "DE",
+      "en": "demo",
+      "file": "demo-arm64-v8a-v1.0.0.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.5/demo-arm64-v8a-v1.0.0.koreplugin",
+      "releaseTag": "v1.1.3-build.5",
+      "size": 21978,
+      "sha256": "2c2c8db2a5bcdd616fc854145dc530ed0d0e0e325228d78d64ea4f4c306d0b37"
+    },
+    {
+      "id": "demo",
+      "abi": "armeabi-v7a",
+      "version": "1.0.0",
+      "name": "计算器 Demo",
+      "description": "独立扩展示例：表达式计算、状态管理与结果弹窗",
+      "kind": "extension",
+      "mark": "DE",
+      "en": "demo",
+      "file": "demo-armeabi-v7a-v1.0.0.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.5/demo-armeabi-v7a-v1.0.0.koreplugin",
+      "releaseTag": "v1.1.3-build.5",
+      "size": 21979,
+      "sha256": "bbfcc0f927cdcfdca1adb225481c6ad6b0e0c07f449dad93f7631bf35e0ee058"
     },
     {
       "id": "zhuiju",
