@@ -1,4 +1,4 @@
-import { ABIS, formatDate, h, icon } from "./themes/kit.js";
+import { ABIS, formatDate, h, icon, registerPlugins } from "./themes/kit.js";
 
 const THEMES = [
   { id: "studio", name: "工作室", desc: "明亮克制的默认风格", scheme: "light", swatch: ["#f3f4f6", "#0f1626", "#f39a1e"] },
@@ -42,6 +42,7 @@ const manifestReady = fetch("./data/latest.json", { cache: "no-store" })
   })
   .then((data) => {
     if (!data.packages?.some((pkg) => pkg.id === "host")) throw new Error("版本清单缺少本体安装包");
+    registerPlugins(data.packages);
     state.manifest = data;
     document.title = `Koreplay ${data.hostVersion} | Android 媒体客户端`;
   })

@@ -154,6 +154,36 @@
       "releaseTag": "v1.1.3-build.4",
       "size": 2839548,
       "sha256": "35ea6bc916c1405b9b25dfd56ecd51c3a2cade93c9404e65865fc99b055f0249"
+    },
+    {
+      "id": "zhuiju",
+      "abi": "arm64-v8a",
+      "version": "1.0.0",
+      "name": "追剧",
+      "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
+      "kind": "extension",
+      "mark": "ZH",
+      "en": "zhuiju",
+      "file": "zhuiju-arm64-v8a-v1.0.0.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.4/zhuiju-arm64-v8a-v1.0.0.koreplugin",
+      "releaseTag": "v1.1.3-build.4",
+      "size": 291172,
+      "sha256": "198f9d1ee4ebd8a24a210967beb4dfc2b250d215df437d270724ab897b56f068"
+    },
+    {
+      "id": "zhuiju",
+      "abi": "armeabi-v7a",
+      "version": "1.0.0",
+      "name": "追剧",
+      "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
+      "kind": "extension",
+      "mark": "ZH",
+      "en": "zhuiju",
+      "file": "zhuiju-armeabi-v7a-v1.0.0.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.4/zhuiju-armeabi-v7a-v1.0.0.koreplugin",
+      "releaseTag": "v1.1.3-build.4",
+      "size": 291171,
+      "sha256": "52e57725a7be3507695440ff84e265c2b7e9eff17f28b1dbfe4410f29663e420"
     }
   ],
   "checksums": "./data/SHA256SUMS"

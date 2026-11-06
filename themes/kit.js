@@ -21,7 +21,22 @@ export const GROUPS = [
   { kind: "ui", title: "界面", note: "必需" },
   { kind: "runtime", title: "运行时", note: "按接口类型选择" },
   { kind: "player", title: "播放器", note: "至少安装一个" },
+  { kind: "extension", title: "扩展插件", note: "按需安装" },
 ];
+
+/** Register newly released plugins before any theme renders its catalog. */
+export function registerPlugins(packages) {
+  for (const pkg of packages) {
+    if (pkg.id === "host" || Object.hasOwn(PLUGINS, pkg.id)) continue;
+    PLUGINS[pkg.id] = {
+      name: pkg.name || pkg.id,
+      en: pkg.en || pkg.id,
+      mark: pkg.mark || pkg.id.slice(0, 2).toUpperCase(),
+      kind: pkg.kind === "extension" ? "extension" : "runtime",
+      desc: pkg.description || "独立安装的插件。",
+    };
+  }
+}
 
 export const ABIS = {
   "arm64-v8a": { short: "ARM64", bits: "64 位" },
