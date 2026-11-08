@@ -1,7 +1,7 @@
 {
-  "releaseTag": "v1.1.3-build.9",
-  "releaseName": "Koreplay v1.1.3-build.9",
-  "publishedAt": "2026-11-08T03:06:06Z",
+  "releaseTag": "v1.1.3-build.10",
+  "releaseName": "Koreplay v1.1.3-build.10",
+  "publishedAt": "2026-11-08T06:02:43Z",
   "hostVersion": "1.0.5",
   "hostApi": 1,
   "packages": [
@@ -138,22 +138,22 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.8",
-      "file": "ui-arm64-v8a-v1.0.8.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.9/ui-arm64-v8a-v1.0.8.koreplugin",
-      "releaseTag": "v1.1.3-build.9",
-      "size": 2840660,
-      "sha256": "bc8c938316c6e082d277cc52e2afa90e4a02e9737567c16e5c032b4bde0945b5"
+      "version": "1.0.9",
+      "file": "ui-arm64-v8a-v1.0.9.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.10/ui-arm64-v8a-v1.0.9.koreplugin",
+      "releaseTag": "v1.1.3-build.10",
+      "size": 2840805,
+      "sha256": "a858227e5a48cbf6fa57291cc4723f23c04da6022a3382d44b37ad7fa56005c1"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.8",
-      "file": "ui-armeabi-v7a-v1.0.8.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.9/ui-armeabi-v7a-v1.0.8.koreplugin",
-      "releaseTag": "v1.1.3-build.9",
-      "size": 2840344,
-      "sha256": "9a5c7db6471b54d6a51a6eff1e013ef052344308189e73028870ccd08fc421a0"
+      "version": "1.0.9",
+      "file": "ui-armeabi-v7a-v1.0.9.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.10/ui-armeabi-v7a-v1.0.9.koreplugin",
+      "releaseTag": "v1.1.3-build.10",
+      "size": 2840490,
+      "sha256": "f5e1a08064eb84cebaa7fc715b1ef458119627747f8d3ed3ec6521cb7cf3d3c8"
     },
     {
       "id": "demo",

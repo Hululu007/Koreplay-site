@@ -11,8 +11,8 @@ cd07c0ca744251b373606a41c6c5b022f8359085054960b7a9393af8c12d6a41  python-arm64-v
 0f3b3caadc879e26ed9d5cc71ff1073f47df1b801084a22e8037b46d679692b4  python-armeabi-v7a-v1.0.1.koreplugin
 0bc2e94b5629567c8909381138d09951645461f6818baabdc4981163fb58ffed  quickjs-arm64-v8a-v1.0.0.koreplugin
 13bfe1234e6aba6a414a9bd5682766f7745ad267e1bdccdf9bd274a413ba82a9  quickjs-armeabi-v7a-v1.0.0.koreplugin
-bc8c938316c6e082d277cc52e2afa90e4a02e9737567c16e5c032b4bde0945b5  ui-arm64-v8a-v1.0.8.koreplugin
-9a5c7db6471b54d6a51a6eff1e013ef052344308189e73028870ccd08fc421a0  ui-armeabi-v7a-v1.0.8.koreplugin
+a858227e5a48cbf6fa57291cc4723f23c04da6022a3382d44b37ad7fa56005c1  ui-arm64-v8a-v1.0.9.koreplugin
+f5e1a08064eb84cebaa7fc715b1ef458119627747f8d3ed3ec6521cb7cf3d3c8  ui-armeabi-v7a-v1.0.9.koreplugin
 2c2c8db2a5bcdd616fc854145dc530ed0d0e0e325228d78d64ea4f4c306d0b37  demo-arm64-v8a-v1.0.0.koreplugin
 bbfcc0f927cdcfdca1adb225481c6ad6b0e0c07f449dad93f7631bf35e0ee058  demo-armeabi-v7a-v1.0.0.koreplugin
 198f9d1ee4ebd8a24a210967beb4dfc2b250d215df437d270724ab897b56f068  zhuiju-arm64-v8a-v1.0.0.koreplugin
