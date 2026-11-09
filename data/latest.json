@@ -1,19 +1,19 @@
 {
-  "releaseTag": "v1.1.3-build.11",
-  "releaseName": "Koreplay v1.1.3-build.11",
-  "publishedAt": "2026-11-08T14:39:49Z",
-  "hostVersion": "1.0.6",
+  "releaseTag": "v1.1.3-build.12",
+  "releaseName": "Koreplay v1.1.3-build.12",
+  "publishedAt": "2026-11-09T05:52:55Z",
+  "hostVersion": "1.0.7",
   "hostApi": 1,
   "packages": [
     {
       "id": "host",
       "abi": "all",
-      "version": "1.0.6",
-      "file": "Koreplay-mobile-universal-v1.0.6.apk",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.11/Koreplay-mobile-universal-v1.0.6.apk",
-      "releaseTag": "v1.1.3-build.11",
-      "size": 14872975,
-      "sha256": "8b81b1aaf264bc8057880a1cc57b4ba8bcfa2cecc17c19955f61e3e3f3b12959"
+      "version": "1.0.7",
+      "file": "Koreplay-mobile-universal-v1.0.7.apk",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.12/Koreplay-mobile-universal-v1.0.7.apk",
+      "releaseTag": "v1.1.3-build.12",
+      "size": 14885263,
+      "sha256": "5e79277ab304970829439e50dcf04208b35ab1d94456e7aac562b67e6dae4ea3"
     },
     {
       "id": "ijk",
@@ -78,22 +78,22 @@
     {
       "id": "node",
       "abi": "arm64-v8a",
-      "version": "1.0.0",
-      "file": "node-arm64-v8a-v1.0.0.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.1/node-arm64-v8a-v1.0.0.koreplugin",
-      "releaseTag": "v1.1.3-build.1",
-      "size": 24048052,
-      "sha256": "352ee254080a774873a97e6e78f18ca8e78269a71791f7a63182b03061f8d0eb"
+      "version": "1.0.1",
+      "file": "node-arm64-v8a-v1.0.1.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.12/node-arm64-v8a-v1.0.1.koreplugin",
+      "releaseTag": "v1.1.3-build.12",
+      "size": 26793824,
+      "sha256": "75e25860913a0c049e7e3dc48947239bc874bf0a8712aa1f1ca5e7dd3521cf94"
     },
     {
       "id": "node",
       "abi": "armeabi-v7a",
-      "version": "1.0.0",
-      "file": "node-armeabi-v7a-v1.0.0.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.1/node-armeabi-v7a-v1.0.0.koreplugin",
-      "releaseTag": "v1.1.3-build.1",
-      "size": 33525641,
-      "sha256": "c8a2714cd22ad2962f20fc856a542cec79bd6dd9da7bec714f306af2ca4ddc13"
+      "version": "1.0.1",
+      "file": "node-armeabi-v7a-v1.0.1.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.12/node-armeabi-v7a-v1.0.1.koreplugin",
+      "releaseTag": "v1.1.3-build.12",
+      "size": 36270867,
+      "sha256": "e89d66d7a6054971ab4f7c170d0f83dd0274ac25370b68fc67fae16f93fc85f5"
     },
     {
       "id": "python",
@@ -138,22 +138,22 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.10",
-      "file": "ui-arm64-v8a-v1.0.10.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.11/ui-arm64-v8a-v1.0.10.koreplugin",
-      "releaseTag": "v1.1.3-build.11",
-      "size": 2840839,
-      "sha256": "901fc9c9f6b2dca248873613f2802c032b1533145d59305dea58ef69d2d5e932"
+      "version": "1.0.11",
+      "file": "ui-arm64-v8a-v1.0.11.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.12/ui-arm64-v8a-v1.0.11.koreplugin",
+      "releaseTag": "v1.1.3-build.12",
+      "size": 2841252,
+      "sha256": "3db315e77ed2e2b65e5c0bcc1090247b6ae370777de575bb78af2ef65cee3b3d"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.10",
-      "file": "ui-armeabi-v7a-v1.0.10.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.11/ui-armeabi-v7a-v1.0.10.koreplugin",
-      "releaseTag": "v1.1.3-build.11",
-      "size": 2840522,
-      "sha256": "2b27b92b56f0650062fb64f9c2a3c2d99fab0394c6ad5ddfe5a4c43614f8e2cd"
+      "version": "1.0.11",
+      "file": "ui-armeabi-v7a-v1.0.11.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.12/ui-armeabi-v7a-v1.0.11.koreplugin",
+      "releaseTag": "v1.1.3-build.12",
+      "size": 2840939,
+      "sha256": "46359bdc597cfd6024e1af49b95dfff495967f5363c50f474d29a792c789746f"
     },
     {
       "id": "demo",
@@ -184,6 +184,36 @@
       "releaseTag": "v1.1.3-build.5",
       "size": 21979,
       "sha256": "bbfcc0f927cdcfdca1adb225481c6ad6b0e0c07f449dad93f7631bf35e0ee058"
+    },
+    {
+      "id": "nodeprojects",
+      "abi": "arm64-v8a",
+      "version": "1.0.0",
+      "name": "Node.js 项目管理器",
+      "description": "导入本地 Node.js 项目，安装 npm 依赖，独立启动、停止和查看实时日志",
+      "kind": "extension",
+      "mark": "NO",
+      "en": "nodeprojects",
+      "file": "nodeprojects-arm64-v8a-v1.0.0.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.12/nodeprojects-arm64-v8a-v1.0.0.koreplugin",
+      "releaseTag": "v1.1.3-build.12",
+      "size": 224793,
+      "sha256": "de1dfcffdac8bbc624dfc00440f74f561f99d86dd89284d59786c34d0e457da4"
+    },
+    {
+      "id": "nodeprojects",
+      "abi": "armeabi-v7a",
+      "version": "1.0.0",
+      "name": "Node.js 项目管理器",
+      "description": "导入本地 Node.js 项目，安装 npm 依赖，独立启动、停止和查看实时日志",
+      "kind": "extension",
+      "mark": "NO",
+      "en": "nodeprojects",
+      "file": "nodeprojects-armeabi-v7a-v1.0.0.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.1.3-build.12/nodeprojects-armeabi-v7a-v1.0.0.koreplugin",
+      "releaseTag": "v1.1.3-build.12",
+      "size": 224795,
+      "sha256": "fa97d4d91a109784c1ccdde729e24f1cbb3b1897cdbcb7d7b0d7140c75e989cb"
     },
     {
       "id": "zhuiju",
