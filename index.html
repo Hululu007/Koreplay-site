@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN" data-scheme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f4f6">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Koreplay 是 Android 手机和平板上的媒体客户端。本体精简，界面、运行时和播放器作为独立插件按需安装。">
+  <meta property="og:title" content="Koreplay · Android 媒体客户端">
+  <meta property="og:description" content="一个本体，按需装配。下载 Koreplay 本体与插件。">
+  <meta property="og:image" content="./assets/koreplay-app.png">
+  <meta property="og:type" content="website">
+  <title>Koreplay | Android 媒体客户端</title>
+  <link rel="icon" href="./assets/koreplay-app.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/koreplay-app.png">
+  <script type="importmap">{"imports": {"./themes/kit.js": "./themes/kit.js?v=v1.6.0-build.1-6d2a2b4f83", "./themes/gallery.js": "./themes/gallery.js?v=v1.6.0-build.1-6d2a2b4f83"}}</script>
+  <link rel="modulepreload" href="./themes/kit.js?v=v1.6.0-build.1-6d2a2b4f83">
+  <link rel="stylesheet" href="./styles.css?v=v1.6.0-build.1-6d2a2b4f83">
+  <link rel="stylesheet" href="./themes/gallery.css?v=v1.6.0-build.1-6d2a2b4f83">
+  <script>
+    // Paint the saved theme's background before modules load to avoid a flash.
+    (function () {
+      var bg = { studio: "#f3f4f6", nebula: "#07081a", terminal: "#040a06", cinema: "#0d0b09", blueprint: "#0c3a8a", kinetic: "#eeeeea", quantum: "#02030a", holo: "#030b10" };
+      var id = new URLSearchParams(location.search).get("theme");
+      try { id = bg[id] ? id : localStorage.getItem("koreplay.theme"); } catch (e) {}
+      if (bg[id]) document.documentElement.style.background = bg[id];
+    })();
+  </script>
+  <script type="module" src="./app.js?v=v1.6.0-build.1-6d2a2b4f83"></script>
+</head>
+<body>
+  <a class="core-skip" href="#app">跳到正文</a>
+  <div id="app" aria-busy="true">
+    <div class="core-boot" aria-hidden="true">
+      <img src="./assets/koreplay-app.png" alt="" width="56" height="56">
+    </div>
+  </div>
+  <noscript>
+    <div class="core-noscript">
+      <h1>Koreplay</h1>
+      <p>Android 手机和平板上的媒体客户端。这个页面需要启用 JavaScript 才能显示最新版本。</p>
+      <p><a href="https://github.com/ingriddaleusag-dotcom/Koreplay/releases">前往 GitHub Releases 下载</a></p>
+    </div>
+  </noscript>
+</body>
+</html>
