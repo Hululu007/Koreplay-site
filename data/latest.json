@@ -1,39 +1,39 @@
 {
-  "releaseTag": "v1.6.0-build.5",
-  "releaseName": "Koreplay v1.6.0-build.5",
-  "publishedAt": "2026-11-26T02:38:45Z",
-  "hostVersion": "1.0.5",
+  "releaseTag": "v1.6.0-build.6",
+  "releaseName": "Koreplay v1.6.0-build.6",
+  "publishedAt": "2026-11-26T10:58:29Z",
+  "hostVersion": "1.0.6",
   "hostApi": 1,
   "packages": [
     {
       "id": "host",
       "abi": "all",
-      "version": "1.0.5",
-      "file": "Koreplay-mobile-universal-v1.0.5.apk",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/Koreplay-mobile-universal-v1.0.5.apk",
-      "releaseTag": "v1.6.0-build.5",
-      "size": 16332512,
-      "sha256": "be2b839e26666259fdef0bcc385c4bbbac709e050d3a6daf5a1b26755dc366c5"
+      "version": "1.0.6",
+      "file": "Koreplay-mobile-universal-v1.0.6.apk",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/Koreplay-mobile-universal-v1.0.6.apk",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 16344800,
+      "sha256": "8de67378d053acd74b8b70f567fc5c67ab4f40b5a632d500062f234bc93e2999"
     },
     {
       "id": "ijk",
       "abi": "arm64-v8a",
-      "version": "1.0.0",
-      "file": "ijk-arm64-v8a-v1.0.0.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0/ijk-arm64-v8a-v1.0.0.koreplugin",
-      "releaseTag": "v1.6.0",
-      "size": 6252084,
-      "sha256": "8abf5652d4674c80ffb4e998dc4d47fd1e93323815a65e8c5702aeccf2da545f"
+      "version": "1.0.1",
+      "file": "ijk-arm64-v8a-v1.0.1.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/ijk-arm64-v8a-v1.0.1.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 6252082,
+      "sha256": "5271294359d04b111fff28b1e56cf03f33e644d4c0cacfcf23794d23b207102a"
     },
     {
       "id": "ijk",
       "abi": "armeabi-v7a",
-      "version": "1.0.0",
-      "file": "ijk-armeabi-v7a-v1.0.0.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0/ijk-armeabi-v7a-v1.0.0.koreplugin",
-      "releaseTag": "v1.6.0",
-      "size": 5843570,
-      "sha256": "8cf43e2ddf41c2dbf81e17988ecb81068632876420885162bc5da14fafd33040"
+      "version": "1.0.1",
+      "file": "ijk-armeabi-v7a-v1.0.1.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/ijk-armeabi-v7a-v1.0.1.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 5843572,
+      "sha256": "112a0535e10c3cbe1efa9441a9f91596913853c4297927f56c215ed1180f74d4"
     },
     {
       "id": "java",
@@ -58,22 +58,22 @@
     {
       "id": "media3",
       "abi": "arm64-v8a",
-      "version": "1.0.2",
-      "file": "media3-arm64-v8a-v1.0.2.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/media3-arm64-v8a-v1.0.2.koreplugin",
-      "releaseTag": "v1.6.0-build.5",
-      "size": 13822826,
-      "sha256": "38cc41391e1da58f43584385b7cb5de96a468a188c233e037cb5afcc5b755557"
+      "version": "1.0.3",
+      "file": "media3-arm64-v8a-v1.0.3.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/media3-arm64-v8a-v1.0.3.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 13824469,
+      "sha256": "164e824af224af1a5b736b3e6cb0931dbd8b50165e70f775d44015314ea75e5c"
     },
     {
       "id": "media3",
       "abi": "armeabi-v7a",
-      "version": "1.0.2",
-      "file": "media3-armeabi-v7a-v1.0.2.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/media3-armeabi-v7a-v1.0.2.koreplugin",
-      "releaseTag": "v1.6.0-build.5",
-      "size": 13220896,
-      "sha256": "1e9bb503749239b7adabe35ee4ef01d3a35c37318def4435e27dc6d012976bd7"
+      "version": "1.0.3",
+      "file": "media3-armeabi-v7a-v1.0.3.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/media3-armeabi-v7a-v1.0.3.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 13222537,
+      "sha256": "06fc13f2af07e1787017823b59d49d59ca7359ed25869d95b3b57a0979a3783e"
     },
     {
       "id": "node",
@@ -138,22 +138,22 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.5",
-      "file": "ui-arm64-v8a-v1.0.5.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/ui-arm64-v8a-v1.0.5.koreplugin",
-      "releaseTag": "v1.6.0-build.5",
-      "size": 4492285,
-      "sha256": "2c07f28818b6b13c8c55fae92c3fc53e0fc6c0641634c6d1b59a9cc7c9d15ec9"
+      "version": "1.0.6",
+      "file": "ui-arm64-v8a-v1.0.6.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/ui-arm64-v8a-v1.0.6.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 4584019,
+      "sha256": "aec7debd76f31385b413da5ae03758b4ccb4a81d8d818eaa3087d1685a3d5007"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.5",
-      "file": "ui-armeabi-v7a-v1.0.5.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/ui-armeabi-v7a-v1.0.5.koreplugin",
-      "releaseTag": "v1.6.0-build.5",
-      "size": 4491965,
-      "sha256": "907f29643936cca0168b775292404f333a3911b8674fbf7ef0008a408a01f09a"
+      "version": "1.0.6",
+      "file": "ui-armeabi-v7a-v1.0.6.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/ui-armeabi-v7a-v1.0.6.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 4583701,
+      "sha256": "5b43fd6470ebe2e7360bce1bf45c2c8615eebd3c0a65ef5bfd87a56bce39b458"
     },
     {
       "id": "demo",
@@ -218,32 +218,32 @@
     {
       "id": "zhuiju",
       "abi": "arm64-v8a",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-arm64-v8a-v1.0.1.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/zhuiju-arm64-v8a-v1.0.1.koreplugin",
-      "releaseTag": "v1.6.0-build.5",
-      "size": 291601,
-      "sha256": "31cb73bd1f5a39b7e7837eab84a536ad5e5fb7cb5b54c39926573fbb149e568b"
+      "file": "zhuiju-arm64-v8a-v1.0.2.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/zhuiju-arm64-v8a-v1.0.2.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 429076,
+      "sha256": "136c1abe2fb94770afc7c6aa883c1d89a066ccb8fdbc882c2de819401f5e16a4"
     },
     {
       "id": "zhuiju",
       "abi": "armeabi-v7a",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-armeabi-v7a-v1.0.1.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/zhuiju-armeabi-v7a-v1.0.1.koreplugin",
-      "releaseTag": "v1.6.0-build.5",
-      "size": 291605,
-      "sha256": "2a989fe71211ca7b3ba1b3a6f75bb08ce71dc1826bf35c1e97a487474544ce81"
+      "file": "zhuiju-armeabi-v7a-v1.0.2.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.6/zhuiju-armeabi-v7a-v1.0.2.koreplugin",
+      "releaseTag": "v1.6.0-build.6",
+      "size": 429076,
+      "sha256": "7bfa95fd889888f7b2d2e21285e4eaadd4246286dd851b8331b4e4a7e9082c0b"
     }
   ],
   "checksums": "./data/SHA256SUMS"
