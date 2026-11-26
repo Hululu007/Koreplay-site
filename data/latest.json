@@ -1,19 +1,19 @@
 {
-  "releaseTag": "v1.6.0-build.3",
-  "releaseName": "Koreplay v1.6.0-build.3",
-  "publishedAt": "2026-11-25T10:03:22Z",
-  "hostVersion": "1.0.3",
+  "releaseTag": "v1.6.0-build.5",
+  "releaseName": "Koreplay v1.6.0-build.5",
+  "publishedAt": "2026-11-26T02:38:45Z",
+  "hostVersion": "1.0.5",
   "hostApi": 1,
   "packages": [
     {
       "id": "host",
       "abi": "all",
-      "version": "1.0.3",
-      "file": "Koreplay-mobile-universal-v1.0.3.apk",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.3/Koreplay-mobile-universal-v1.0.3.apk",
-      "releaseTag": "v1.6.0-build.3",
+      "version": "1.0.5",
+      "file": "Koreplay-mobile-universal-v1.0.5.apk",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/Koreplay-mobile-universal-v1.0.5.apk",
+      "releaseTag": "v1.6.0-build.5",
       "size": 16332512,
-      "sha256": "63a9c81d8c6d380036a2179cfa1c9a5a670baabce2fd76f3a62fdede4b06ac8a"
+      "sha256": "be2b839e26666259fdef0bcc385c4bbbac709e050d3a6daf5a1b26755dc366c5"
     },
     {
       "id": "ijk",
@@ -58,22 +58,22 @@
     {
       "id": "media3",
       "abi": "arm64-v8a",
-      "version": "1.0.1",
-      "file": "media3-arm64-v8a-v1.0.1.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.3/media3-arm64-v8a-v1.0.1.koreplugin",
-      "releaseTag": "v1.6.0-build.3",
-      "size": 13822822,
-      "sha256": "e9fc404895a948be3e64358bb4ba2f73a40b92f9b60721e189a13dd7e0284d00"
+      "version": "1.0.2",
+      "file": "media3-arm64-v8a-v1.0.2.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/media3-arm64-v8a-v1.0.2.koreplugin",
+      "releaseTag": "v1.6.0-build.5",
+      "size": 13822826,
+      "sha256": "38cc41391e1da58f43584385b7cb5de96a468a188c233e037cb5afcc5b755557"
     },
     {
       "id": "media3",
       "abi": "armeabi-v7a",
-      "version": "1.0.1",
-      "file": "media3-armeabi-v7a-v1.0.1.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.3/media3-armeabi-v7a-v1.0.1.koreplugin",
-      "releaseTag": "v1.6.0-build.3",
-      "size": 13220895,
-      "sha256": "f7c436318a74106a468217ee2ea12ea00ba68e6243482c3f4f1e862f88154c63"
+      "version": "1.0.2",
+      "file": "media3-armeabi-v7a-v1.0.2.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/media3-armeabi-v7a-v1.0.2.koreplugin",
+      "releaseTag": "v1.6.0-build.5",
+      "size": 13220896,
+      "sha256": "1e9bb503749239b7adabe35ee4ef01d3a35c37318def4435e27dc6d012976bd7"
     },
     {
       "id": "node",
@@ -138,22 +138,22 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.3",
-      "file": "ui-arm64-v8a-v1.0.3.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.3/ui-arm64-v8a-v1.0.3.koreplugin",
-      "releaseTag": "v1.6.0-build.3",
-      "size": 4469526,
-      "sha256": "631188b69bba1feb978ffcbfd29f61af3ff4c00d84e02f25b84df89895f41bba"
+      "version": "1.0.5",
+      "file": "ui-arm64-v8a-v1.0.5.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/ui-arm64-v8a-v1.0.5.koreplugin",
+      "releaseTag": "v1.6.0-build.5",
+      "size": 4492285,
+      "sha256": "2c07f28818b6b13c8c55fae92c3fc53e0fc6c0641634c6d1b59a9cc7c9d15ec9"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.3",
-      "file": "ui-armeabi-v7a-v1.0.3.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.3/ui-armeabi-v7a-v1.0.3.koreplugin",
-      "releaseTag": "v1.6.0-build.3",
-      "size": 4469204,
-      "sha256": "f7294718fb74f835013e8222b173b8916500630876c97ee7a778277855ace820"
+      "version": "1.0.5",
+      "file": "ui-armeabi-v7a-v1.0.5.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/ui-armeabi-v7a-v1.0.5.koreplugin",
+      "releaseTag": "v1.6.0-build.5",
+      "size": 4491965,
+      "sha256": "907f29643936cca0168b775292404f333a3911b8674fbf7ef0008a408a01f09a"
     },
     {
       "id": "demo",
@@ -218,32 +218,32 @@
     {
       "id": "zhuiju",
       "abi": "arm64-v8a",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-arm64-v8a-v1.0.0.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0/zhuiju-arm64-v8a-v1.0.0.koreplugin",
-      "releaseTag": "v1.6.0",
-      "size": 291563,
-      "sha256": "45db4704ee51e708ed0c8ebfc4fb0dd0f5618d418a1e96db7dab1e23cb313461"
+      "file": "zhuiju-arm64-v8a-v1.0.1.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/zhuiju-arm64-v8a-v1.0.1.koreplugin",
+      "releaseTag": "v1.6.0-build.5",
+      "size": 291601,
+      "sha256": "31cb73bd1f5a39b7e7837eab84a536ad5e5fb7cb5b54c39926573fbb149e568b"
     },
     {
       "id": "zhuiju",
       "abi": "armeabi-v7a",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-armeabi-v7a-v1.0.0.koreplugin",
-      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0/zhuiju-armeabi-v7a-v1.0.0.koreplugin",
-      "releaseTag": "v1.6.0",
-      "size": 291565,
-      "sha256": "f363356ba96b7274608408a6f6419b25218bbb48859042987a7fbf00e037b547"
+      "file": "zhuiju-armeabi-v7a-v1.0.1.koreplugin",
+      "url": "https://github.com/ingriddaleusag-dotcom/Koreplay/releases/download/v1.6.0-build.5/zhuiju-armeabi-v7a-v1.0.1.koreplugin",
+      "releaseTag": "v1.6.0-build.5",
+      "size": 291605,
+      "sha256": "2a989fe71211ca7b3ba1b3a6f75bb08ce71dc1826bf35c1e97a487474544ce81"
     }
   ],
   "checksums": "./data/SHA256SUMS"
