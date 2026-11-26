@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>返回 Koreplay</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #f5f5f7; --card: #fff; --text: #1d1d1f; --muted: #6e6e73; --line: rgba(0,0,0,.08); --accent: #ed1c24; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #000; --card: #1c1c1e; --text: #f5f5f7; --muted: #98989d; --line: rgba(255,255,255,.1); } }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: var(--bg); color: var(--text);
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif; }
+    main { width: 100%; max-width: 380px; background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 36px 28px 28px; text-align: center; }
+    .mark { width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 22px; display: grid; place-items: center;
+      background: linear-gradient(140deg, #ff4d55, #9f0f2f); box-shadow: 0 12px 28px rgba(237,28,36,.32); }
+    .mark svg { width: 38px; height: 38px; }
+    h1 { margin: 0 0 8px; font-size: 22px; font-weight: 800; letter-spacing: -.2px; }
+    p { margin: 0; color: var(--muted); font-size: 14.5px; }
+    .btn { display: block; width: 100%; margin-top: 26px; padding: 14px 18px; border: 0; border-radius: 999px; font: inherit; font-weight: 700;
+      background: var(--text); color: var(--bg); text-decoration: none; cursor: pointer; }
+    .ghost { margin-top: 12px; background: transparent; color: var(--muted); border: 1px solid var(--line); font-weight: 600; font-size: 14px; }
+    .err .mark { background: linear-gradient(140deg, #8e8e93, #48484a); box-shadow: none; }
+    small { display: block; margin-top: 18px; color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main id="card">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    </div>
+    <h1 id="title">授权成功</h1>
+    <p id="message">正在返回 Koreplay…</p>
+    <a class="btn" id="open" href="#">返回 Koreplay</a>
+    <button class="btn ghost" id="copy" type="button">没有跳转？复制授权链接</button>
+    <small>复制后回到 Koreplay，在「Trakt 账号」页点「粘贴授权链接」即可完成。</small>
+  </main>
+  <script>
+    (function () {
+      var query = location.search.replace(/^\?/, '');
+      var params = new URLSearchParams(query);
+      var state = params.get('state') || '';
+      var error = params.get('error');
+      // state 前缀 kd. = debug 包，其余是正式包
+      var debug = state.indexOf('kd.') === 0;
+      var scheme = debug ? 'koreplay-debug' : 'koreplay';
+      var pkg = debug ? 'com.koreplay.mobile.debug' : 'com.koreplay.mobile';
+      var target = scheme + '://trakt/callback?' + query;
+      var android = /Android/i.test(navigator.userAgent);
+      var link = android ? 'intent://trakt/callback?' + query + '#Intent;scheme=' + scheme + ';package=' + pkg + ';end' : target;
+
+      if (error) {
+        document.getElementById('card').className = 'err';
+        document.getElementById('title').textContent = error === 'access_denied' ? '已取消授权' : '授权没有完成';
+        document.getElementById('message').textContent = params.get('error_description') || '回到 Koreplay 重新连接即可。';
+      } else if (!params.get('code')) {
+        document.getElementById('card').className = 'err';
+        document.getElementById('title').textContent = '链接不完整';
+        document.getElementById('message').textContent = '请回到 Koreplay 重新连接 Trakt。';
+      }
+
+      var open = document.getElementById('open');
+      open.href = link;
+      document.getElementById('copy').addEventListener('click', function () {
+        var text = location.href;
+        var done = function () { document.getElementById('copy').textContent = '已复制，回到 Koreplay 粘贴'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { window.prompt('复制这个链接', text); });
+        } else {
+          window.prompt('复制这个链接', text);
+        }
+      });
+      // 自动跳一次；被浏览器拦下时用户点按钮
+      if (query) setTimeout(function () { location.href = link; }, 120);
+    })();
+  </script>
+</body>
+</html>
