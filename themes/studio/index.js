@@ -174,7 +174,7 @@ export default {
           h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0 许可证"),
           h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS"))));
 
-    root.append(nav, h("main", null, hero, facts, gallery({ id: "st-screens", layout: "stage", variant: "studio" }), components, install, verify), footer);
+    root.append(nav, h("main", null, hero, facts, gallery({ id: "st-screens", layout: "stage", variant: "studio", version: host?.version }), components, install, verify), footer);
 
     syncAbi();
     renderCatalog(ctx, catalog);
