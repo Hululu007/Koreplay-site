@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="How Koreplay uses Trakt for optional watchlists, episode watch history, watched progress, and personal calendars on Android.">
+  <meta name="referrer" content="no-referrer">
+  <title>Trakt integration · Trakt 接入说明 | Koreplay</title>
+  <link rel="canonical" href="https://ingriddaleusag-dotcom.github.io/Koreplay-site/trakt/">
+  <link rel="icon" href="../assets/koreplay-app.png" type="image/png">
+  <style>
+    :root { color-scheme: light dark; --bg: #f4f5f7; --paper: #fff; --ink: #17202d; --muted: #566171; --line: #dce1e8; --accent: #175bc0; --tint: #edf3ff; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111318; --paper: #1a1e26; --ink: #f1f4f8; --muted: #bdc6d4; --line: #363e4b; --accent: #9fc3ff; --tint: #202e45; } }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.8 system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    a { color: var(--accent); text-underline-offset: 4px; overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 3px; }
+    .skip { position: absolute; left: 16px; top: -80px; padding: 8px 14px; background: var(--paper); z-index: 2; }
+    .skip:focus { top: 12px; }
+    .wrap { width: min(100% - 40px, 940px); margin: 0 auto; }
+    header { padding: 24px 0; border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); font-size: 19px; font-weight: 750; text-decoration: none; }
+    .brand img { width: 38px; height: 38px; border-radius: 11px; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; }
+    main { padding: 48px 0 56px; }
+    .eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 44px); line-height: 1.2; letter-spacing: -.035em; }
+    .intro { max-width: 790px; color: var(--muted); margin: 18px 0 10px; }
+    .updated { color: var(--muted); font-size: 13px; }
+    .notice { padding: 20px 24px; margin: 28px 0; border-left: 4px solid var(--accent); border-radius: 0 16px 16px 0; background: var(--tint); font-size: 18px; font-weight: 650; }
+    .notice p { margin: 0; }
+    .notice .translation { margin-top: 8px; font-size: 14px; font-weight: 400; color: var(--muted); }
+    .jump { padding: 4px 0 0; }
+    article { margin-top: 28px; padding: clamp(22px, 5vw, 42px); background: var(--paper); border: 1px solid var(--line); border-radius: 22px; }
+    article > h2 { margin-top: 0; font-size: 26px; }
+    section + section { margin-top: 30px; padding-top: 28px; border-top: 1px solid var(--line); }
+    h3 { margin: 0 0 10px; font-size: 19px; line-height: 1.4; }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 8px 0; }
+    dl { display: grid; grid-template-columns: minmax(125px, .8fr) 2fr; margin: 22px 0 0; border-top: 1px solid var(--line); }
+    dt, dd { padding: 14px 0; border-bottom: 1px solid var(--line); }
+    dt { font-weight: 650; padding-right: 18px; }
+    dd { margin: 0; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0 0; }
+    .button { padding: 10px 18px; background: var(--ink); color: var(--paper); border: 1px solid var(--ink); border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 650; }
+    .button.secondary { background: transparent; color: var(--accent); border-color: var(--line); }
+    footer { padding: 26px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 520px) { .wrap { width: min(100% - 28px, 940px); } main { padding-top: 32px; } nav { gap: 8px 16px; } dl { grid-template-columns: 1fr; } dt { border-bottom: 0; padding-bottom: 0; } dd { padding-top: 4px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print { body { background: white; color: black; } header, .jump, footer, .actions { display: none; } .wrap { width: 100%; } article { border: 0; padding: 0; } a { color: inherit; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header><div class="wrap bar">
+    <a class="brand" href="../"><img src="../assets/koreplay-app.png" width="38" height="38" alt="">Koreplay</a>
+    <nav aria-label="Site navigation"><a href="../">Home / 官网</a><a href="../privacy/">Privacy / 隐私</a><a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">Support / 反馈</a></nav>
+  </div></header>
+  <main class="wrap" id="main">
+    <p class="eyebrow">Optional account integration</p>
+    <h1>Koreplay &amp; Trakt</h1>
+    <p class="intro">Koreplay is an Android media player for phones and tablets using user-configured media sources. Its optional Trakt integration lets users manage watchlists, sync episode watch history and watched progress, and view their personal episode calendar. Metadata comes from TMDB and other configured services. Koreplay does not host or provide video content.</p>
+    <p class="updated">Updated November 26, 2026 <span lang="zh-CN">／更新于 2026 年 11 月 26 日</span></p>
+    <aside class="notice" aria-label="Trakt notice" id="notice"><p>Koreplay uses Trakt but is not endorsed or certified by Trakt.</p><p class="translation" lang="zh-CN">Koreplay 使用 Trakt 服务，但未获得 Trakt 的背书或认证。</p></aside>
+    <nav class="jump" aria-label="Page languages"><a href="#english" lang="en">Read in English</a><a href="#chinese" lang="zh-CN">阅读中文说明</a><a href="#install">Reviewer access &amp; walkthrough</a></nav>
+
+    <article id="english" lang="en" aria-labelledby="english-title">
+      <h2 id="english-title">How the integration works</h2>
+      <section>
+        <h3>What you can do</h3>
+        <ul>
+          <li>Connect your own Trakt account in an external browser using OAuth with PKCE. A device-code fallback is available in the account settings.</li>
+          <li>Read your watchlist, watched episode progress, and personal episode calendar.</li>
+          <li>Add or remove watchlist titles, and mark matched episodes watched or unwatched.</li>
+          <li>Keep local tracking information available while offline and synchronize pending changes when connected.</li>
+        </ul>
+        <p>When a tracked episode is matched to a season and episode number, playback at or above 85% of a video lasting at least 60 seconds automatically marks it watched. While connected, this update is sent to Trakt. Unmatched episodes are not reported by this rule. Tracking or untracking a show can also unhide or hide the show in your Trakt calendar.</p>
+        <p>Koreplay's integration reads and writes account data. Its episode history feature uses Trakt's history synchronization endpoints; it is not presented as a live playback scrobble feature. Existing local-only tracking entries are uploaded using the separate “Upload local tracking” action.</p>
+        <dl>
+          <dt>Platform</dt><dd>Android phones and tablets; Android 8.0 or later.</dd>
+          <dt>Account sync</dt><dd>Trakt watchlists, episode watch history, watched progress, and personal calendars.</dd>
+          <dt>Other data sources</dt><dd>TMDB metadata and artwork, optional Douban-based discovery and reviews, and user-configured content sources.</dd>
+          <dt>App source</dt><dd>The application source repository is private. This public repository hosts product information and documentation; app distribution is restricted.</dd>
+        </dl>
+      </section>
+      <section id="install">
+        <h3>Reviewer access and account walkthrough</h3>
+        <p>Application distribution is restricted. This public site does not provide installer download links. Reviewers can contact the maintainer through the <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">support tracker</a> to discuss evaluation access. Post only a non-sensitive request; access arrangements are handled by the maintainer.</p>
+        <ol>
+          <li>After obtaining an authorized evaluation package, install the Koreplay Android APK. Use the matching ARM32 or ARM64 plugins indicated by the app's plugin manager.</li>
+          <li>On first launch, the host opens a file manager. Long-press its “文件管理” heading to open plugin management. Install the interface (“界面”) plugin and the tracking (“追剧”) extension, then restart the app. Install a playback plugin and the appropriate runtime separately if you want to play content from your own sources.</li>
+          <li>Open Settings (“设置”) → Tracking &amp; reviews (“追更与剧评”). In the Trakt section, choose the connect action to open Trakt in your browser, sign in to your own account, and approve the connection.</li>
+          <li>Return to Koreplay and use “立即同步” (Sync now). Watchlist and episode tracking controls are available in the tracking views and the calendar. The account page shows connection and synchronization status.</li>
+          <li>To stop synchronization, choose “断开连接” (Disconnect) on the same page. Local tracking records remain available. See the <a href="../privacy/#deletion">disconnect and deletion instructions</a> for removing device data or revoking access on Trakt.</li>
+        </ol>
+        <p>The app does not include a preconfigured video source. Browsing and playback require a source you are authorized to use. Access to account features also depends on Trakt granting access for the app and your account.</p>
+        <div class="actions"><a class="button" href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">Contact the maintainer</a><a class="button secondary" href="../privacy/">Privacy policy</a></div>
+      </section>
+      <section>
+        <h3>Privacy and account control</h3>
+        <p>The connection is optional. Authorization tokens and synchronization state are stored in the app's local data. Disconnecting clears local account credentials and pending synchronization state, and attempts to revoke authorization with Trakt. It preserves local tracking records and does not delete your Trakt history.</p>
+        <p>If you set a Trakt proxy, the configured service handles API and token requests. Exported app backups can include saved credentials. Read the <a href="../privacy/">privacy policy</a> for the data involved, retention, proxy and backup behavior, and removal instructions.</p>
+        <p>The Trakt notice at the top of this page also appears in Koreplay's About information. No Trakt endorsement or certification is claimed.</p>
+      </section>
+      <section>
+        <h3>Support and service credits</h3>
+        <p>For installation or integration help, use <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">Koreplay's public support tracker</a>. Do not post account tokens, authorization callback URLs, backups, or private viewing history.</p>
+        <p>Trakt provides account tracking and calendar services. TMDB and other configured sources provide additional metadata. Each service retains its own identity, terms, and data policies. Koreplay does not supply films, shows, or streaming subscriptions; use only services and content you have permission to access.</p>
+      </section>
+    </article>
+
+    <article id="chinese" lang="zh-CN" aria-labelledby="chinese-title">
+      <h2 id="chinese-title">Trakt 接入说明</h2>
+      <section>
+        <h3>用于同步你的追更</h3>
+        <p>Koreplay 是 Android 手机和平板上的媒体客户端，播放内容由你自行配置。Trakt 是可选账号功能，用于待看列表、剧集观看记录、已看进度和个人播出日历。</p>
+        <ul>
+          <li>主动连接自己的 Trakt 账号，通过外部浏览器完成 OAuth + PKCE 授权，也可使用账号页的设备码方式。</li>
+          <li>读取待看与已看进度，添加或移除待看条目，标记剧集已看或未看。</li>
+          <li>保留本机追更供离线使用，连接后同步待处理的修改。</li>
+          <li>已追更且季集匹配成功的视频，时长不少于 60 秒、播放达到 85% 时自动标记已看，并在连接状态下同步。无法匹配季集号的内容不会按此规则上报。</li>
+        </ul>
+        <p>追更或取消追更还可能取消隐藏或隐藏该剧的 Trakt 日历条目。原有本机独有条目可通过“上传本机追更”单独上传。这里使用观看历史同步接口，不把它描述为实时播放上报功能。</p>
+        <p>影视资料还会来自 TMDB、可选的豆瓣相关服务及你配置的内容接口；它们与 Trakt 账号同步是不同的功能。当前追更账号状态与 Trakt 同步。应用源码仓库为私有，软件采用受限分发，本公开仓库只提供产品信息和文档。</p>
+      </section>
+      <section>
+        <h3>审核访问、连接与断开</h3>
+        <p>本网站不提供安装包下载链接。审核人员如需了解测试访问方式，可通过<a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">支持入口</a>向维护者提出不含敏感信息的请求，由维护者安排相关访问事宜。</p>
+        <ol>
+          <li>取得授权的测试安装材料后，在 Android 8.0 及以上设备安装本体 APK。插件架构以软件插件管理页显示的 ARM32 或 ARM64 为准。</li>
+          <li>首次启动显示文件管理时，长按顶部“文件管理”进入插件管理，安装“界面”和“追剧”扩展后重启。需要播放自行配置的内容时，再安装播放插件及接口所需的运行时。</li>
+          <li>进入“设置 → 追更与剧评”，点击 Trakt 连接按钮，在浏览器中的 Trakt 页面登录并允许授权。</li>
+          <li>返回软件后点击“立即同步”，在追更页面和周历查看列表及状态；账号页会显示连接、同步结果。</li>
+          <li>不再使用同步时，在同一页面点击“断开连接”。本机追更记录保留；删除本机数据或撤销 Trakt 侧授权，见<a href="../privacy/#chinese">隐私政策</a>。</li>
+        </ol>
+        <p>软件不附带可用影视源，浏览和播放需要你配置有权访问的来源。账号功能是否可用，还取决于 Trakt 对应用及账号的访问授权。</p>
+      </section>
+      <section>
+        <h3>数据、声明与支持</h3>
+        <p>Trakt 令牌及同步状态保存在应用本机数据中。断开时会清理本机授权信息与待同步状态，并尝试向 Trakt 撤销授权；本机追更与 Trakt 历史不会随断开而删除。如果设置 Trakt 中转，授权和 API 请求会经过该服务；导出备份可能包含已保存凭据。完整处理方式见<a href="../privacy/">隐私政策</a>。</p>
+        <p>本页顶部的英文 Trakt 声明也显示在软件的“关于 Koreplay”信息中。Koreplay 不声称获得 Trakt 的背书或认证，不提供影视内容或流媒体订阅。请只使用有权访问的内容及服务。</p>
+        <p>安装和接入问题请通过<a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">公开反馈入口</a>联系。请勿提交账号令牌、授权回调链接、备份或私人观看历史。</p>
+      </section>
+    </article>
+  </main>
+  <footer><div class="wrap"><p><a href="../">Koreplay home</a> · <a href="../privacy/">Privacy policy</a> · <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site">Public repository</a></p><p>© 2026 Koreplay. This page is available without signing in.</p></div></footer>
+</body>
+</html>

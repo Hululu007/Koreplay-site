@@ -407,13 +407,13 @@ export default {
         h("div", { class: "qt-abi-wrap" }, abiGroup, h("p", null, ABI_HINT))),
       grid,
       h("div", { class: "qt-notes" },
-        h("div", null, h("h3", null, "下载说明"), h("p", null, AUTH_NOTE), h("a", { href: LINKS.releases, target: "_blank", rel: "noreferrer" }, "全部发布")),
+        h("div", null, h("h3", null, "下载说明"), h("p", null, AUTH_NOTE), h("a", { href: LINKS.support, target: "_blank", rel: "noreferrer" }, "联系维护者")),
         h("div", null, h("h3", null, "核对文件完整性"), h("p", null, "点击卡片上的哈希可复制完整 SHA-256。下载后计算哈希值，与本页或校验文件一致即说明文件完整。"), h("a", { href: ctx.checksums, download: "SHA256SUMS" }, "下载 SHA256SUMS"))));
 
     const footer = h("footer", { class: "qt-footer" },
       h("p", null, DISCLAIMER),
       h("nav", { "aria-label": "页脚" },
-        h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "源码"),
+        h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "项目文档"),
         h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0"),
         h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS")));
 

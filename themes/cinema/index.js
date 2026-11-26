@@ -230,11 +230,11 @@ export default {
       h("p", { class: "cn-credit-text" }, "每个安装包都附带 SHA-256，可在上方点击复制，或下载校验文件比对。"),
       h("p", { class: "cn-credit-links" },
         h("a", { href: ctx.checksums, download: "SHA256SUMS" }, "SHA256SUMS"),
-        h("a", { href: LINKS.releases, target: "_blank", rel: "noreferrer" }, "全部发布")),
+        h("a", { href: LINKS.support, target: "_blank", rel: "noreferrer" }, "联系维护者")),
       h("p", { class: "cn-credit-role" }, "特别鸣谢"), h("p", { class: "cn-credit-name is-small" }, "TVBoxOS 上游作者与贡献者"),
       h("p", { class: "cn-credit-role" }, "声明"), h("p", { class: "cn-credit-text" }, DISCLAIMER),
       h("p", { class: "cn-credit-links" },
-        h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "源码"),
+        h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "项目文档"),
         h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0"),
         h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS")),
       h("p", { class: "cn-fin" }, "完"));

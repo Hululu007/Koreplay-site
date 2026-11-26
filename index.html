@@ -7,16 +7,16 @@
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="Koreplay 是 Android 手机和平板上的媒体客户端。本体精简，界面、运行时和播放器作为独立插件按需安装。">
   <meta property="og:title" content="Koreplay · Android 媒体客户端">
-  <meta property="og:description" content="一个本体，按需装配。下载 Koreplay 本体与插件。">
+  <meta property="og:description" content="一个本体，按需装配。了解 Koreplay 的功能、版本与插件。">
   <meta property="og:image" content="./assets/koreplay-app.png">
   <meta property="og:type" content="website">
   <title>Koreplay | Android 媒体客户端</title>
   <link rel="icon" href="./assets/koreplay-app.png" type="image/png">
   <link rel="apple-touch-icon" href="./assets/koreplay-app.png">
-  <script type="importmap">{"imports": {"./themes/kit.js": "./themes/kit.js?v=v1.6.0-build.6-4c61911bf8", "./themes/gallery.js": "./themes/gallery.js?v=v1.6.0-build.6-4c61911bf8"}}</script>
-  <link rel="modulepreload" href="./themes/kit.js?v=v1.6.0-build.6-4c61911bf8">
-  <link rel="stylesheet" href="./styles.css?v=v1.6.0-build.6-4c61911bf8">
-  <link rel="stylesheet" href="./themes/gallery.css?v=v1.6.0-build.6-4c61911bf8">
+  <script type="importmap">{"imports": {"./themes/kit.js": "./themes/kit.js?v=v1.6.0-build.7-31b27b165b", "./themes/gallery.js": "./themes/gallery.js?v=v1.6.0-build.7-31b27b165b"}}</script>
+  <link rel="modulepreload" href="./themes/kit.js?v=v1.6.0-build.7-31b27b165b">
+  <link rel="stylesheet" href="./styles.css?v=v1.6.0-build.7-31b27b165b">
+  <link rel="stylesheet" href="./themes/gallery.css?v=v1.6.0-build.7-31b27b165b">
   <script>
     // Paint the saved theme's background before modules load to avoid a flash.
     (function () {
@@ -26,7 +26,7 @@
       if (bg[id]) document.documentElement.style.background = bg[id];
     })();
   </script>
-  <script type="module" src="./app.js?v=v1.6.0-build.6-4c61911bf8"></script>
+  <script type="module" src="./app.js?v=v1.6.0-build.7-31b27b165b"></script>
 </head>
 <body>
   <a class="core-skip" href="#app">跳到正文</a>
@@ -39,8 +39,16 @@
     <div class="core-noscript">
       <h1>Koreplay</h1>
       <p>Android 手机和平板上的媒体客户端。这个页面需要启用 JavaScript 才能显示最新版本。</p>
-      <p><a href="https://github.com/ingriddaleusag-dotcom/Koreplay/releases">前往 GitHub Releases 下载</a></p>
+      <p>安装包采用受限分发。<a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">联系维护者申请访问</a></p>
     </div>
   </noscript>
+  <footer class="core-info">
+    <nav aria-label="产品信息与支持">
+      <a href="./trakt/">Trakt 使用说明 / Integration</a>
+      <a href="./privacy/">隐私政策 / Privacy</a>
+      <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">问题反馈 / Support</a>
+    </nav>
+    <p>Koreplay uses Trakt but is not endorsed or certified by Trakt.</p>
+  </footer>
 </body>
 </html>

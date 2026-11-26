@@ -94,7 +94,7 @@ export default {
     const phoneList = h("ul", { class: "kn-phone-list" });
     const phoneCount = h("span", { class: "kn-phone-count" });
     const phoneTotal = h("p", { class: "kn-phone-total" });
-    const phoneGet = h("button", { class: "kn-phone-get", type: "button", onclick: () => downloadRack() }, icon("download"), h("span", null, "下载已装配的插件"));
+    const phoneGet = h("button", { class: "kn-phone-get", type: "button", onclick: () => downloadRack() }, icon("download"), h("span", null, "查看插件获取方式"));
     const phone = h("div", { class: "kn-phone", "aria-label": "已装配的插件" },
       h("span", { class: "kn-phone-notch", "aria-hidden": "true" }),
       h("div", { class: "kn-phone-screen" },
@@ -115,7 +115,7 @@ export default {
     const partsSection = h("section", { class: "kn-section", id: "kn-parts", "aria-labelledby": "kn-parts-title" },
       h("header", { class: "kn-section-head" },
         h("h2", { id: "kn-parts-title" }, "组件清单"),
-        h("p", null, "和上面的装配台同步。也可以在这里逐个装配、下载或复制 SHA-256。")),
+        h("p", null, "和上面的装配台同步。也可以在这里逐个装配、查看获取方式或复制 SHA-256。")),
       parts);
 
     const steps = h("section", { class: "kn-section", id: "kn-steps", "aria-labelledby": "kn-steps-title" },
@@ -132,7 +132,7 @@ export default {
       h("div", { class: "kn-note" },
         h("h3", null, "下载说明"),
         h("p", null, AUTH_NOTE),
-        h("a", { class: "kn-link", href: LINKS.releases, target: "_blank", rel: "noreferrer" }, "全部发布")),
+        h("a", { class: "kn-link", href: LINKS.support, target: "_blank", rel: "noreferrer" }, "联系维护者")),
       h("div", { class: "kn-note" },
         h("h3", null, "核对文件完整性"),
         h("p", null, "组件清单里每一项都能复制 SHA-256。下载后计算哈希值，与本页或校验文件一致，说明文件完整。"),
@@ -141,7 +141,7 @@ export default {
     const footer = h("footer", { class: "kn-footer" },
       h("p", null, DISCLAIMER),
       h("nav", { "aria-label": "页脚" },
-        h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "源码"),
+        h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "项目文档"),
         h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0"),
         h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS")));
 
@@ -279,6 +279,10 @@ export default {
       const pkgs = ORDER.filter((id) => rack.has(id)).map(pkgOf).filter(Boolean);
       if (!pkgs.length) {
         ctx.toast("手机里还没有插件");
+        return;
+      }
+      if (pkgs.some((pkg) => !pkg.url)) {
+        ctx.toast("安装包受限分发，请通过页面下方的“联系维护者”申请访问");
         return;
       }
       ctx.toast(`开始下载 ${pkgs.length} 个安装包，浏览器可能会询问是否允许多个下载`);

@@ -159,7 +159,7 @@ export default {
       h("div", { class: "st-card" },
         h("h2", { id: "st-verify-title" }, "下载说明"),
         h("p", null, AUTH_NOTE),
-        h("a", { class: "st-link", href: LINKS.releases, target: "_blank", rel: "noreferrer" }, "全部发布")),
+        h("a", { class: "st-link", href: LINKS.support, target: "_blank", rel: "noreferrer" }, "联系维护者")),
       h("div", { class: "st-card" },
         h("h2", null, "核对文件完整性"),
         h("p", null, "每个安装包都列出了 SHA-256。下载后用校验工具计算哈希值，与本页或校验文件中的值一致，说明文件完整。"),
@@ -170,7 +170,7 @@ export default {
         h("div", { class: "st-footer-brand" }, h("img", { src: "./assets/koreplay-app.png", alt: "", width: "24", height: "24" }), h("span", null, "Koreplay")),
         h("p", { class: "st-footer-note" }, DISCLAIMER),
         h("nav", { class: "st-footer-links", "aria-label": "页脚" },
-          h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "源码"),
+          h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "项目文档"),
           h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0 许可证"),
           h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS"))));
 

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="How Koreplay handles local app data, optional Trakt synchronization, configured services, backups, and deletion.">
+  <meta name="referrer" content="no-referrer">
+  <title>Privacy policy · 隐私政策 | Koreplay</title>
+  <link rel="canonical" href="https://ingriddaleusag-dotcom.github.io/Koreplay-site/privacy/">
+  <link rel="icon" href="../assets/koreplay-app.png" type="image/png">
+  <style>
+    :root { color-scheme: light dark; --bg: #f4f5f7; --paper: #fff; --ink: #17202d; --muted: #566171; --line: #dce1e8; --accent: #175bc0; --tint: #edf3ff; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #111318; --paper: #1a1e26; --ink: #f1f4f8; --muted: #bdc6d4; --line: #363e4b; --accent: #9fc3ff; --tint: #202e45; } }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.8 system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    a { color: var(--accent); text-underline-offset: 4px; overflow-wrap: anywhere; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 3px; }
+    .skip { position: absolute; left: 16px; top: -80px; padding: 8px 14px; background: var(--paper); z-index: 2; }
+    .skip:focus { top: 12px; }
+    .wrap { width: min(100% - 40px, 940px); margin: 0 auto; }
+    header { padding: 24px 0; border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); font-size: 19px; font-weight: 750; text-decoration: none; }
+    .brand img { width: 38px; height: 38px; border-radius: 11px; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 14px; }
+    main { padding: 48px 0 56px; }
+    .eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(30px, 5vw, 44px); line-height: 1.2; letter-spacing: -.035em; }
+    .intro { max-width: 760px; color: var(--muted); margin: 18px 0 10px; }
+    .updated { color: var(--muted); font-size: 13px; }
+    .jump { margin: 25px 0; padding: 16px 20px; background: var(--tint); border-radius: 14px; }
+    article { margin-top: 28px; padding: clamp(22px, 5vw, 42px); background: var(--paper); border: 1px solid var(--line); border-radius: 22px; }
+    article > h2 { margin-top: 0; font-size: 26px; }
+    section + section { margin-top: 30px; padding-top: 28px; border-top: 1px solid var(--line); }
+    h3 { margin: 0 0 10px; font-size: 19px; line-height: 1.4; }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 24px; }
+    li { margin: 8px 0; }
+    .notice { padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--tint); border-radius: 0 12px 12px 0; }
+    footer { padding: 26px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    footer p { margin: 8px 0; }
+    @media (max-width: 520px) { .wrap { width: min(100% - 28px, 940px); } main { padding-top: 32px; } nav { gap: 8px 16px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print { body { background: white; color: black; } header, .jump, footer { display: none; } .wrap { width: 100%; } article { border: 0; padding: 0; } a { color: inherit; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="../"><img src="../assets/koreplay-app.png" width="38" height="38" alt="">Koreplay</a>
+      <nav aria-label="Site navigation">
+        <a href="../">Home / 官网</a>
+        <a href="../trakt/">Trakt integration</a>
+        <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">Support / 反馈</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap" id="main">
+    <p class="eyebrow">Your data &amp; your choices</p>
+    <h1>Privacy policy <span lang="zh-CN">· 隐私政策</span></h1>
+    <p class="intro">This policy describes data handling in the Koreplay Android app, its official Trakt integration, and this public website. It explains what is stored, which services receive requests, and how to disconnect or remove data.</p>
+    <p class="updated">Effective and last updated: November 26, 2026 <span lang="zh-CN">／生效及更新日期：2026 年 11 月 26 日</span></p>
+    <nav class="jump" aria-label="Policy languages"><a href="#english" lang="en">Read in English</a><a href="#chinese" lang="zh-CN">阅读中文版本</a><a href="#deletion">Disconnect &amp; deletion</a></nav>
+
+    <article id="english" lang="en" aria-labelledby="english-title">
+      <h2 id="english-title">English</h2>
+      <section>
+        <h3>1. Who provides Koreplay</h3>
+        <p>Koreplay is maintained by the developer using the GitHub account <a href="https://github.com/ingriddaleusag-dotcom">ingriddaleusag-dotcom</a>. The public website and support repository is <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site">Koreplay-site</a>. No separate Koreplay account is required to use the app.</p>
+        <p>Koreplay is a media client for Android phones and tablets. Media sources are configured by users. The app does not host or supply movies, shows, or streaming subscriptions. User-added sources, scripts, plugins, and services may make their own requests; their operators are responsible for their own data practices.</p>
+      </section>
+      <section>
+        <h3>2. Local app data</h3>
+        <p>The app stores settings, source addresses, favorites, browsing and playback records, episode progress, and cached metadata or images on the device as needed for the features you use. User-provided service credentials, such as a TMDB API token, are stored for the configured connection. Local files, fonts, wallpapers, and scripts are accessed when you select or configure them.</p>
+        <p>Storage permissions support file browsing, importing configuration and plugins, and backup or restore. Network access is used for configured services, media playback, metadata, and account synchronization. The app's local data remains until you remove it through available controls, clear the app's storage, or uninstall; cache contents may be replaced or removed sooner.</p>
+      </section>
+      <section>
+        <h3>3. Optional Trakt connection</h3>
+        <p>Trakt is optional. When you choose to connect, Koreplay opens Trakt in a browser for authorization using OAuth with PKCE. A device-code option is also available. You enter your Trakt password on Trakt's page, not in Koreplay. The app receives access and refresh tokens, and stores them in its local app preferences so it can maintain the connection.</p>
+        <p>After authorization, the integration reads and stores your Trakt username, display name, avatar URL, VIP status and watchlist limit, together with the watchlist, episode watched progress, calendar information, media identifiers, and synchronization state needed for the feature. These details show the connected account and keep your tracking views up to date.</p>
+        <p>Pending browser authorization is valid for 15 minutes. The app clears the pending authorization when that flow is completed or cancelled. Expiry prevents an old flow from being used; clearing app storage also removes any remaining local authorization data.</p>
+      </section>
+      <section>
+        <h3>4. What synchronization changes</h3>
+        <p>While connected, Koreplay can add or remove titles from your Trakt watchlist, read watched progress and your personal episode calendar, and add or remove episode watch history. Tracking and untracking a show can also unhide or hide it in your Trakt calendar.</p>
+        <p>For a show you are tracking, a matched episode is automatically marked watched when playback reaches at least 85% of a video whose duration is at least 60 seconds. This watched state is synchronized with Trakt while connected. Unmatched episodes are not reported by this automatic rule. Existing local-only tracking entries can be sent using the separate “Upload local tracking” action.</p>
+        <p>Synchronization may run when you open the app, account page, or calendar, or change tracking information. Pending actions may be stored locally for a later retry. This integration synchronizes account tracking with Trakt; it does not sign you in to TMDB or Douban to synchronize your watch history there.</p>
+      </section>
+      <section>
+        <h3>5. Network requests and other services</h3>
+        <p>When no Trakt proxy is configured, Trakt authorization and API requests use Trakt's HTTPS endpoints. If you configure a Trakt proxy, API requests, token exchanges, token refreshes, and revocation requests pass through that proxy. Its operator can process the credentials and account data in those requests. The current proxy setting accepts HTTP as well as HTTPS; HTTP does not protect the connection in transit. Use a trusted HTTPS endpoint or leave this setting empty for the direct connection.</p>
+        <p>TMDB supplies metadata and artwork. Optional Douban-based services supply discovery lists or reviews. Your configured content sources supply browsing and playback information. These providers can receive search terms, title identifiers, relevant requests, any credentials required for their own service, and connection information such as your IP address. Their own policies apply to data they receive.</p>
+        <p>The public website is hosted by GitHub Pages. GitHub handles web requests and related connection information under its <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>. The homepage saves the selected visual theme in browser local storage. This privacy page does not include analytics scripts, external fonts, or embedded third-party media. The authorization callback page receives an authorization code and state in its URL to return you to the app; do not share that URL.</p>
+        <p>Trakt's handling of data stored in your Trakt account is explained in the <a href="https://trakt.tv/privacy">Trakt privacy policy</a>. This policy describes Koreplay's handling of the integration and does not replace providers' policies.</p>
+      </section>
+      <section>
+        <h3>6. Backups and information you share</h3>
+        <p>When you export a local backup, the current backup format includes app preferences and can contain service credentials, Trakt authorization tokens, tracking history, and source configuration. A backup remains wherever you save or copy it until you remove it. Treat it as private account data and do not upload it to a public issue or share it with untrusted parties.</p>
+        <p>Android or device backup and restore may also retain app data, depending on your system settings and device. Review those settings if you do not want app data backed up. Restoring an old backup can restore previously saved settings and account information.</p>
+        <p>If you contact the project through GitHub, information you submit is handled by GitHub and can be read by the project maintainers. Public issues are visible to others. Share only the non-sensitive details needed to explain a problem.</p>
+      </section>
+      <section id="deletion">
+        <h3>7. Disconnecting, retention, and deletion</h3>
+        <ol>
+          <li><strong>Stop Trakt synchronization:</strong> open Settings → Tracking &amp; reviews (“追更与剧评”) → Trakt → Disconnect (“断开连接”). Koreplay removes the locally stored access and refresh tokens, account profile, pending synchronization queue, and remote synchronization snapshots. It also attempts to revoke the token with Trakt. If that request cannot reach Trakt, remote revocation may not complete.</li>
+          <li><strong>Remove access at Trakt:</strong> revoke Koreplay in your Trakt account's connected-app settings to ensure the service-side authorization is removed.</li>
+          <li><strong>Remove device data:</strong> disconnect first, then use Android Settings → Apps → Koreplay → Storage → Clear storage to delete the app's local settings, account information, and history. This resets the app. Remove exported backup files separately, and review system backups if you use them.</li>
+          <li><strong>Remove data held by Trakt:</strong> manage or delete history and lists in your Trakt account. Disconnecting Koreplay does not delete these records. Trakt controls its own retention and account-deletion process.</li>
+        </ol>
+        <p>Disconnecting preserves your local tracking list and watched records for offline use. It does not erase previously exported backups. Local account tokens are retained while the connection is active, replaced when refreshed, and removed on disconnect or invalidation. Tracking data has no fixed automatic deletion period; it remains until you remove it or clear the app's storage.</p>
+      </section>
+      <section>
+        <h3>8. Contact and policy updates</h3>
+        <p>For privacy questions or help removing data, open a non-sensitive request in <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">Koreplay's public support tracker</a>. You can request deletion of information you previously supplied to the maintainers or ask for help with the controls above. Identify the relevant public issue or type of data without posting private account details. Maintainers cannot directly delete data held only on your device or in your third-party accounts.</p>
+        <p><strong>Do not post passwords, access tokens, refresh tokens, authorization callback URLs, backup files, or private viewing history in public issues.</strong> For information stored by GitHub, Trakt, or another provider, use that provider's account and privacy controls.</p>
+        <p>Changes to data handling will be reflected on this page with an updated date. Review this policy when updating the app or enabling a new service.</p>
+      </section>
+    </article>
+
+    <article id="chinese" lang="zh-CN" aria-labelledby="chinese-title">
+      <h2 id="chinese-title">中文版</h2>
+      <section>
+        <h3>1. 适用范围与维护者</h3>
+        <p>Koreplay 由 GitHub 账号 <a href="https://github.com/ingriddaleusag-dotcom">ingriddaleusag-dotcom</a> 对应的开发者维护，公开网站与支持仓库为 <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site">Koreplay-site</a>。使用软件不需要另行注册 Koreplay 账号。</p>
+        <p>本政策说明 Android 客户端、官方 Trakt 接入及本网站的数据处理方式。Koreplay 是手机和平板上的媒体客户端，内容源由用户自行配置，软件不提供影视内容或流媒体订阅。用户添加的接口、脚本、插件和服务可能发起自己的请求，其运营者负责各自的数据处理。</p>
+      </section>
+      <section>
+        <h3>2. 本机数据与权限</h3>
+        <p>软件根据你使用的功能，在设备上保存设置、接口地址、收藏、浏览与播放记录、剧集进度，以及元数据和图片缓存。自行填写的服务凭据（例如 TMDB API 令牌）用于对应连接。你选择或配置本地文件、字体、壁纸和脚本时，软件会按该功能读取它们。</p>
+        <p>存储权限用于文件浏览、配置与插件导入、备份和恢复；网络权限用于已配置的服务、播放、影视资料及账号同步。本机数据通常保留到你使用相应功能删除、清除应用存储或卸载为止；缓存可能更早被替换或清理。</p>
+      </section>
+      <section>
+        <h3>3. 可选的 Trakt 授权与同步</h3>
+        <p>Trakt 连接由你主动开启。默认通过浏览器打开 Trakt 的 OAuth + PKCE 授权页面，也提供设备码授权。Trakt 密码输入在 Trakt 页面，Koreplay 不要求你在软件内填写该密码。授权后，访问令牌与刷新令牌保存在本机应用偏好数据中，以维持连接。</p>
+        <p>接入会读取并保存 Trakt 用户名、显示名称、头像地址、VIP 状态、待看数量限制，以及追更所需的待看列表、剧集观看状态、个人日历、影视条目标识与同步状态。这些数据用于显示已连接账号及同步追更内容。浏览器待授权信息有效期为 15 分钟，完成或取消该流程时会清除；过期后不能继续使用，清除应用存储也会移除残留授权数据。</p>
+        <p>连接期间，你的操作可以增删 Trakt 待看条目、增删剧集观看记录，并读取观看进度与个人日历。追更或取消追更还可能取消隐藏或隐藏该剧的 Trakt 日历条目。已追更且能匹配到季集号的内容，在视频时长不少于 60 秒、播放达到 85% 时自动标记已看，并在连接状态下同步到 Trakt。无法匹配季集号的内容不会按此规则上报。既有的本机独有追更可通过“上传本机追更”单独上传。</p>
+        <p>打开软件、账号页、周历或改变追更信息时可能触发同步，待同步操作可保存在本机以便重试。目前账号追更状态与 Trakt 同步，不会登录 TMDB 或豆瓣并把观看历史同步到它们的账号。</p>
+      </section>
+      <section>
+        <h3>4. 网络请求与第三方服务</h3>
+        <p>未填写 Trakt 中转地址时，授权与 API 请求使用 Trakt 的 HTTPS 接口。填写中转后，API、令牌交换、令牌刷新及撤销请求均会经过该中转，其运营者可以处理请求中的凭据和账号数据。当前中转设置同时接受 HTTP 与 HTTPS；HTTP 无法保护传输过程。请使用可信的 HTTPS 地址，或留空以直连 Trakt。</p>
+        <p>TMDB 提供影视资料与图片，可选豆瓣相关服务提供推荐榜单或剧评，自行配置的内容接口提供浏览和播放信息。相应服务会接收搜索词、影视标识、请求内容、该服务所需的凭据，以及 IP 地址等连接信息，并按各自政策处理。</p>
+        <p>本网站托管于 GitHub Pages，网站请求及连接信息受 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>约束。官网首页在浏览器本地存储中保存你选择的外观主题。本隐私页没有分析脚本、外部字体或第三方媒体嵌入。授权回调页会接收 URL 中的授权码与 state，以便返回软件；请勿分享该地址。Trakt 账号上的数据处理另见 <a href="https://trakt.tv/privacy">Trakt 隐私政策</a>。</p>
+      </section>
+      <section>
+        <h3>5. 备份和主动提交的信息</h3>
+        <p>当前本地导出格式包含应用偏好数据，因此备份可能包含服务凭据、Trakt 授权令牌、追更历史和接口配置。备份在你保存或复制的位置保留，直到你自行删除。请按私人账号资料保管，不要上传到公开反馈或交给不可信的人。</p>
+        <p>Android 或设备厂商的备份、恢复功能也可能根据系统设置保留应用数据。如不希望备份，请检查设备相关设置。恢复旧备份可能恢复当时保存的设置及账号资料。</p>
+        <p>通过 GitHub 反馈时，你提交的信息由 GitHub 处理并可被维护者查看；公开 Issue 也对其他人可见。请只提供排查问题所需的非敏感信息。</p>
+      </section>
+      <section>
+        <h3>6. 断开连接、保存期限与删除</h3>
+        <ol>
+          <li><strong>停止 Trakt 同步：</strong>进入“设置 → 追更与剧评 → Trakt → 断开连接”。软件会清除本机访问令牌、刷新令牌、账号资料、待同步队列及远端同步快照，并尝试向 Trakt 撤销授权；网络请求失败时，远端撤销可能未完成。</li>
+          <li><strong>撤销 Trakt 侧授权：</strong>在 Trakt 账号的已连接应用设置中撤销 Koreplay，确保服务端授权移除。</li>
+          <li><strong>删除本机数据：</strong>先断开连接，再进入 Android 系统“设置 → 应用 → Koreplay → 存储 → 清除存储”。此操作会重置软件并删除其本机设置、账号资料和历史。已导出的备份需另行删除；使用系统备份时也请检查对应副本。</li>
+          <li><strong>删除 Trakt 保存的数据：</strong>在 Trakt 账号中管理或删除观看历史与列表。断开 Koreplay 不会删除这些记录；Trakt 的保留与账号删除流程由其自身控制。</li>
+        </ol>
+        <p>断开后，本机追更列表和已看记录会保留供离线使用，已导出的备份也不会自动删除。授权令牌在连接期间保留、刷新时替换，并在断开或授权失效时移除；追更数据没有固定的自动删除期限，直到你删除或清除应用存储为止。</p>
+      </section>
+      <section>
+        <h3>7. 隐私联系与政策更新</h3>
+        <p>如有隐私问题、需要删除帮助，或希望删除曾主动提供给维护者的信息，请在 <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">公开支持入口</a>提交不含敏感内容的请求。可以指出相关公开 Issue 或数据类型，不要公开私人账号信息。维护者不能远程删除仅保存在你设备或第三方账号中的数据。</p>
+        <p><strong>请勿在公开 Issue 中发送密码、访问令牌、刷新令牌、授权回调地址、备份文件或私人观看历史。</strong>GitHub、Trakt 及其他服务保存的信息，请通过相应服务的账号与隐私功能处理。</p>
+        <p>数据处理方式改变时，我们会更新本页及日期。更新软件或启用新服务时，请重新查看本政策。</p>
+      </section>
+    </article>
+    <p class="notice">Koreplay uses Trakt but is not endorsed or certified by Trakt.</p>
+  </main>
+  <footer><div class="wrap"><p><a href="../">Koreplay home</a> · <a href="../trakt/">Trakt integration</a> · <a href="https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues">Support</a></p><p>© 2026 Koreplay. This page is available without signing in.</p></div></footer>
+</body>
+</html>

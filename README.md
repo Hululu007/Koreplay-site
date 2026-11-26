@@ -1,11 +1,22 @@
-# Koreplay 官方网站
+# Koreplay
 
-Koreplay 是一款面向 Android 手机和平板的媒体客户端。它采用精简本体与独立插件的组合方式：用户可以按需安装界面、Java、Python、Node.js 等运行时，以及 Media3、IJK 等播放组件；不同插件可独立更新，并按设备的 ARM32（armeabi-v7a）或 ARM64（arm64-v8a）架构选择对应版本。
+Public website and documentation for the Koreplay Android media client. The application source code and install packages are privately distributed; this repository does not provide public installer download links.
 
-本网站展示产品信息、最新版本和各组件下载入口。版本目录会随官方发布自动更新，页面始终列出当前最新的本体与插件版本。
+Koreplay is an Android media player for phones and tablets using user-configured media sources. Its optional Trakt integration lets users manage watchlists, sync episode watch history and watched progress, and view their personal episode calendar. Metadata comes from TMDB and other configured services. Koreplay does not host or provide video content.
 
-## 下载说明
+## Public information
 
-本仓库只托管网站与版本信息，不包含 APK 或插件安装包。安装文件发布在 [Koreplay 源码仓库](https://github.com/ingriddaleusag-dotcom/Koreplay/releases) 的 GitHub Release 中，点击即可下载。首次使用请先安装本体，再根据设备架构安装所需插件。
+- [Official website](https://ingriddaleusag-dotcom.github.io/Koreplay-site/)
+- [Privacy policy / 隐私政策](https://ingriddaleusag-dotcom.github.io/Koreplay-site/privacy/)
+- [Trakt integration / Trakt 接入说明](https://ingriddaleusag-dotcom.github.io/Koreplay-site/trakt/)
+- [Support and review access requests](https://github.com/ingriddaleusag-dotcom/Koreplay-site/issues)
 
-Koreplay 仅提供客户端软件，不提供影视内容或第三方接口。源码和许可证请查看 [Koreplay 源码仓库](https://github.com/ingriddaleusag-dotcom/Koreplay)。
+For a review access request, open an issue stating the request without posting passwords, tokens, authorization URLs, account history, or other sensitive information. The maintainer can arrange an appropriate way to continue.
+
+Koreplay uses Trakt but is not endorsed or certified by Trakt.
+
+## 关于此仓库
+
+此仓库仅发布官网、版本信息、隐私政策及 Trakt 接入说明。应用源码和安装包采用私有分发，不提供公开安装包下载链接。
+
+本仓库由应用发布流程自动更新。官网版本信息用于说明当前版本及文件校验值，不代表开放下载。

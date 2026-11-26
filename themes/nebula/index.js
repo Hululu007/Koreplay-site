@@ -373,7 +373,7 @@ export default {
       h("div", { class: "nb-panel nb-reveal" },
         h("h2", { id: "nb-verify-title" }, "下载说明"),
         h("p", null, AUTH_NOTE),
-        h("a", { class: "nb-link", href: LINKS.releases, target: "_blank", rel: "noreferrer" }, "全部发布", icon("arrow"))),
+        h("a", { class: "nb-link", href: LINKS.support, target: "_blank", rel: "noreferrer" }, "联系维护者", icon("arrow"))),
       h("div", { class: "nb-panel nb-reveal", style: { "--d": "100ms" } },
         h("h2", null, "核对文件完整性"),
         h("p", null, "每个安装包都附带 SHA-256，点击即可复制。下载后计算哈希值，与本页或校验文件一致即说明文件完整。"),
@@ -384,7 +384,7 @@ export default {
         h("div", { class: "nb-brand" }, h("img", { src: "./assets/koreplay-app.png", alt: "", width: "22", height: "22" }), h("span", null, "Koreplay")),
         h("p", null, DISCLAIMER),
         h("nav", { "aria-label": "页脚" },
-          h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "源码"),
+          h("a", { href: LINKS.repo, target: "_blank", rel: "noreferrer" }, "项目文档"),
           h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0"),
           h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS"))));
 

@@ -16,6 +16,22 @@ body {
 
 .theme-root { min-height: 100vh; }
 
+.core-info {
+  position: relative;
+  z-index: 2;
+  padding: 28px 24px 100px;
+  border-top: 1px solid rgba(127, 127, 127, .22);
+  background: #f3f4f6;
+  color: #495266;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
+.core-info nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px; }
+.core-info a { color: inherit; text-underline-offset: 4px; }
+.core-info p { margin: 14px 0 0; }
+html[data-scheme="dark"] .core-info { background: #10131b; color: #bac2d0; }
+
 .core-skip {
   position: fixed;
   left: 16px;

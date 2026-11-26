@@ -144,17 +144,22 @@ export default {
             const meta = pkg.id === "host" ? { name: "Koreplay 本体" } : PLUGINS[pkg.id] || { name: pkg.id };
             line(span(pkg.id === "host" ? "tm-amber" : "tm-hl", pad(pkg.id, 10)), pad(meta.name, 18), pad(`v${pkg.version}`, 10), pad(formatSize(pkg.size), 10), pkgLink(pkg));
           }
-          line(span("tm-dim", `当前架构 ${ABIS[ctx.abi].short}。用 get <ID> 下载，abi arm32 切换架构。`));
+          line(span("tm-dim", `当前架构 ${ABIS[ctx.abi].short}。用 get <ID> 查看获取方式，abi arm32 切换架构。`));
         },
       },
       get: {
         args: "<ID>",
-        desc: "下载安装包，例如 get host、get media3",
+        desc: "查看安装包获取方式，例如 get host、get media3",
         complete: () => ["host", ...ctx.plugins().map((pkg) => pkg.id)],
         run([id], fromUser) {
           if (!id) return line(span("tm-err", "get: 缺少 ID。示例：get host"));
           const pkg = findPkg(id.toLowerCase());
           if (!pkg) return line(span("tm-err", `get: 找不到 “${id}”。输入 ls 查看可用 ID。`));
+          if (!pkg.url) {
+            line(AUTH_NOTE);
+            line("联系维护者：", pkgLink(pkg, "申请访问"));
+            return;
+          }
           line(span("tm-ok", "→ "), "开始下载 ", pkgLink(pkg), span("tm-dim", ` (${formatSize(pkg.size)})`));
           line(span("tm-dim", "  如果浏览器跳到 GitHub 404，说明需要先登录有权限的账号。输入 auth 了解详情。"));
           if (fromUser) {
@@ -206,7 +211,7 @@ export default {
         desc: "下载权限说明",
         run() {
           line(AUTH_NOTE);
-          line("全部发布：", h("a", { class: "tm-a", href: LINKS.releases, target: "_blank", rel: "noreferrer" }, LINKS.releases));
+          line("联系维护者：", h("a", { class: "tm-a", href: LINKS.support, target: "_blank", rel: "noreferrer" }, LINKS.support));
         },
       },
       verify: {
@@ -262,7 +267,7 @@ export default {
           line("Koreplay 是 Android 手机和平板上的媒体客户端。");
           line("本体保持精简，界面、运行时和播放器都是独立插件，按需安装、各自更新。");
           line(span("tm-dim", DISCLAIMER));
-          line("源码：", h("a", { class: "tm-a", href: LINKS.repo, target: "_blank", rel: "noreferrer" }, LINKS.repo));
+          line("项目文档：", h("a", { class: "tm-a", href: LINKS.repo, target: "_blank", rel: "noreferrer" }, LINKS.repo));
         },
       },
       matrix: { desc: "？", run: () => matrix() },
