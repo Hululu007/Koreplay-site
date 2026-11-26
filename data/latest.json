@@ -1,18 +1,18 @@
 {
   "distribution": "restricted",
-  "releaseTag": "v1.6.0-build.7",
-  "releaseName": "Koreplay v1.6.0-build.7",
-  "publishedAt": "2026-11-26T13:18:02Z",
-  "hostVersion": "1.0.6",
+  "releaseTag": "v1.6.0-build.8",
+  "releaseName": "Koreplay v1.6.0-build.8",
+  "publishedAt": "2026-11-26T14:07:16Z",
+  "hostVersion": "1.0.7",
   "hostApi": 1,
   "packages": [
     {
       "id": "host",
       "abi": "all",
-      "version": "1.0.6",
-      "file": "Koreplay-mobile-universal-v1.0.6.apk",
-      "size": 16344800,
-      "sha256": "8de67378d053acd74b8b70f567fc5c67ab4f40b5a632d500062f234bc93e2999"
+      "version": "1.0.7",
+      "file": "Koreplay-mobile-universal-v1.0.7.apk",
+      "size": 16348896,
+      "sha256": "1d278693a10aee6c6240ee7e5f7e2e589760c752ced43f7c158247b632147115"
     },
     {
       "id": "ijk",
@@ -113,18 +113,18 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.7",
-      "file": "ui-arm64-v8a-v1.0.7.koreplugin",
-      "size": 4584073,
-      "sha256": "0d9b1ae85b8d57cede282aac0d173a739607487f6a4566ce3f015059aacf75a1"
+      "version": "1.0.8",
+      "file": "ui-arm64-v8a-v1.0.8.koreplugin",
+      "size": 4584524,
+      "sha256": "2663c219270837e1c2e0f99e657fe471cde790b9b5e53380cb8a3375b8788424"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.7",
-      "file": "ui-armeabi-v7a-v1.0.7.koreplugin",
-      "size": 4583756,
-      "sha256": "1dbbfb4465dfe82796bb30719bc57dd50c37fef40ae067f78572e2bb0752f5f2"
+      "version": "1.0.8",
+      "file": "ui-armeabi-v7a-v1.0.8.koreplugin",
+      "size": 4584206,
+      "sha256": "b310a8d05a2f9d7949310e39684a9549b2aa361838223ebc3ad3c60c1713cb42"
     },
     {
       "id": "demo",
