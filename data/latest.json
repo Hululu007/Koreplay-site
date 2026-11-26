@@ -1,8 +1,8 @@
 {
   "distribution": "restricted",
-  "releaseTag": "v1.6.0-build.9",
-  "releaseName": "Koreplay v1.6.0-build.9",
-  "publishedAt": "2026-11-26T14:31:21Z",
+  "releaseTag": "v1.6.0-build.10",
+  "releaseName": "Koreplay v1.6.0-build.10",
+  "publishedAt": "2026-11-26T14:48:56Z",
   "hostVersion": "1.0.7",
   "hostApi": 1,
   "packages": [
