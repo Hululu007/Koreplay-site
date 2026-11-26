@@ -1,8 +1,8 @@
 {
   "distribution": "restricted",
-  "releaseTag": "v1.6.0-build.8",
-  "releaseName": "Koreplay v1.6.0-build.8",
-  "publishedAt": "2026-11-26T14:07:16Z",
+  "releaseTag": "v1.6.0-build.9",
+  "releaseName": "Koreplay v1.6.0-build.9",
+  "publishedAt": "2026-11-26T14:31:21Z",
   "hostVersion": "1.0.7",
   "hostApi": 1,
   "packages": [
@@ -113,18 +113,18 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.8",
-      "file": "ui-arm64-v8a-v1.0.8.koreplugin",
-      "size": 4584524,
-      "sha256": "2663c219270837e1c2e0f99e657fe471cde790b9b5e53380cb8a3375b8788424"
+      "version": "1.0.9",
+      "file": "ui-arm64-v8a-v1.0.9.koreplugin",
+      "size": 4584582,
+      "sha256": "4cff5d8ad549a5c2756158df1cd243c01f82dc1874eac3189859bebadecf576a"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.8",
-      "file": "ui-armeabi-v7a-v1.0.8.koreplugin",
-      "size": 4584206,
-      "sha256": "b310a8d05a2f9d7949310e39684a9549b2aa361838223ebc3ad3c60c1713cb42"
+      "version": "1.0.9",
+      "file": "ui-armeabi-v7a-v1.0.9.koreplugin",
+      "size": 4584269,
+      "sha256": "c22991c8616788906534613652ba6926e000a5eaad1b886c9ffee5f0a21b84ab"
     },
     {
       "id": "demo",
@@ -181,28 +181,28 @@
     {
       "id": "zhuiju",
       "abi": "arm64-v8a",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-arm64-v8a-v1.0.2.koreplugin",
-      "size": 429076,
-      "sha256": "136c1abe2fb94770afc7c6aa883c1d89a066ccb8fdbc882c2de819401f5e16a4"
+      "file": "zhuiju-arm64-v8a-v1.0.3.koreplugin",
+      "size": 429075,
+      "sha256": "8aa47c77ed6e7544626497ce2d52e3c79977e479af5f2999d45061c7f0532a62"
     },
     {
       "id": "zhuiju",
       "abi": "armeabi-v7a",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-armeabi-v7a-v1.0.2.koreplugin",
-      "size": 429076,
-      "sha256": "7bfa95fd889888f7b2d2e21285e4eaadd4246286dd851b8331b4e4a7e9082c0b"
+      "file": "zhuiju-armeabi-v7a-v1.0.3.koreplugin",
+      "size": 429075,
+      "sha256": "d6d28acd3320ec3cd8b46b93087582f0a71e8f59459c7884ba2f7a58e216259d"
     }
   ],
   "checksums": "./data/SHA256SUMS"
