@@ -1,5 +1,6 @@
 import { ABIS, ABI_HINT, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, clamp, disposer, downloadLink, formatSize, h, icon, loop } from "../kit.js";
 import { gallery } from "../gallery.js";
+import { traktShowcase } from "../trakt.js";
 
 // Disk fill / label colours. Restrained palette: one signal orange, the rest graphite to porcelain.
 const COLORS = {
@@ -145,7 +146,7 @@ export default {
         h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0"),
         h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS")));
 
-    root.append(nav, h("main", null, hero, gallery({ id: "kn-screens", layout: "coverflow", variant: "kinetic", title: "装好之后长这样" }), partsSection, steps, notes), footer);
+    root.append(nav, h("main", null, hero, gallery({ id: "kn-screens", layout: "coverflow", variant: "kinetic", title: "装好之后长这样" }), traktShowcase({ id: "kn-trakt", variant: "kinetic" }), partsSection, steps, notes), footer);
 
     /* ---------------- physics bench ---------------- */
     const c2d = canvas.getContext("2d");

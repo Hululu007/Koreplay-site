@@ -1,5 +1,6 @@
 import { ABIS, ABI_HINT, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, disposer, downloadLink, formatSize, h, icon, s } from "../kit.js";
 import { gallery } from "../gallery.js";
+import { traktShowcase } from "../trakt.js";
 
 const ORBIT = [
   { id: "ui", x: 50, y: 12, label: "必需", cls: "is-ui" },
@@ -79,6 +80,7 @@ export default {
           h("span", null, "Koreplay")),
         h("nav", { class: "st-nav-links", "aria-label": "主导航" },
           h("a", { href: "#st-screens" }, "界面"),
+          h("a", { href: "#st-trakt" }, "追更"),
           h("a", { href: "#st-components" }, "组件"),
           h("a", { href: "#st-install" }, "安装"),
           h("a", { href: "#st-verify" }, "校验"),
@@ -174,7 +176,7 @@ export default {
           h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0 许可证"),
           h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS"))));
 
-    root.append(nav, h("main", null, hero, facts, gallery({ id: "st-screens", layout: "stage", variant: "studio", version: host?.version }), components, install, verify), footer);
+    root.append(nav, h("main", null, hero, facts, gallery({ id: "st-screens", layout: "stage", variant: "studio", version: host?.version }), traktShowcase({ id: "st-trakt", variant: "studio" }), components, install, verify), footer);
 
     syncAbi();
     renderCatalog(ctx, catalog);

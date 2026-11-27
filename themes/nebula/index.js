@@ -1,5 +1,6 @@
 import { ABIS, ABI_HINT, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, clamp, disposer, downloadLink, formatSize, h, icon, loop, s } from "../kit.js";
 import { gallery } from "../gallery.js";
+import { traktShowcase } from "../trakt.js";
 
 const TAU = Math.PI * 2;
 const ORDER = ["ui", "java", "python", "node", "quickjs", "media3", "ijk"];
@@ -388,7 +389,7 @@ export default {
           h("a", { href: LINKS.license, target: "_blank", rel: "noreferrer" }, "AGPL-3.0"),
           h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS"))));
 
-    root.append(canvas, fallback, nav, h("main", null, hero, gallery({ id: "nb-screens", layout: "coverflow", variant: "nebula", title: "界面星图" }), catalogSection, install, verify), footer);
+    root.append(canvas, fallback, nav, h("main", null, hero, gallery({ id: "nb-screens", layout: "coverflow", variant: "nebula", title: "界面星图" }), traktShowcase({ id: "nb-trakt", variant: "nebula" }), catalogSection, install, verify), footer);
 
     /* catalog + abi */
     syncAbi();

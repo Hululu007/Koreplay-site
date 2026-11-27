@@ -1,5 +1,6 @@
 import { ABIS, ABI_HINT, AUTH_NOTE, DISCLAIMER, GROUPS, LINKS, PLUGINS, STEPS, clamp, disposer, downloadLink, formatSize, h, icon, loop } from "../kit.js";
 import { gallery } from "../gallery.js";
+import { traktShowcase } from "../trakt.js";
 
 const TAU = Math.PI * 2;
 const ORDER = ["ui", "java", "python", "node", "quickjs", "media3", "ijk"];
@@ -418,7 +419,7 @@ export default {
         h("a", { href: LINKS.upstream, target: "_blank", rel: "noreferrer" }, "上游 TVBoxOS")));
 
     const readout = h("p", { class: "qt-readout", "aria-hidden": "true" });
-    root.append(canvas, veil, nav, rail, h("main", null, h("div", { class: "qt-scenes" }, scenes), gallery({ id: "qt-screens", layout: "coverflow", variant: "quantum", title: "界面形态" }), matrix), footer, readout);
+    root.append(canvas, veil, nav, rail, h("main", null, h("div", { class: "qt-scenes" }, scenes), gallery({ id: "qt-screens", layout: "coverflow", variant: "quantum", title: "界面形态" }), traktShowcase({ id: "qt-trakt", variant: "quantum" }), matrix), footer, readout);
 
     renderGrid();
     d.add(ctx.onAbi(renderGrid));
