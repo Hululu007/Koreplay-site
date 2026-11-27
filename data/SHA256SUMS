@@ -1,4 +1,4 @@
-1d278693a10aee6c6240ee7e5f7e2e589760c752ced43f7c158247b632147115  Koreplay-mobile-universal-v1.0.7.apk
+f7ee4925550e184c36a2f171503e3371f7d7b3857efbdfd597447d135943525d  Koreplay-mobile-universal-v1.0.8.apk
 5271294359d04b111fff28b1e56cf03f33e644d4c0cacfcf23794d23b207102a  ijk-arm64-v8a-v1.0.1.koreplugin
 112a0535e10c3cbe1efa9441a9f91596913853c4297927f56c215ed1180f74d4  ijk-armeabi-v7a-v1.0.1.koreplugin
 8bc6ab325253fdc0c5a18671babf294603bb3d73ee93865820c2225d39a421e8  java-arm64-v8a-v1.0.0.koreplugin
@@ -11,11 +11,11 @@ ff2f6db199b5f6c74ce752b0bb597ebbc4cfceb30f04cb6d5bffb163b596792c  node-armeabi-v
 bfb5d5dfbe66e7a4a0eb1d1d31c7c6414452fe65644360c33c5de2c48dc2b5a2  python-armeabi-v7a-v1.0.1.koreplugin
 de6ee360c23a73c89a99b15ef5c6df8840266f5595c0497dfd4ecdc61b330540  quickjs-arm64-v8a-v1.0.0.koreplugin
 111d3b761b1b9452ce2b3083060f786bdad27fe20f3c30ae577e2b42d8918f09  quickjs-armeabi-v7a-v1.0.0.koreplugin
-4cff5d8ad549a5c2756158df1cd243c01f82dc1874eac3189859bebadecf576a  ui-arm64-v8a-v1.0.9.koreplugin
-c22991c8616788906534613652ba6926e000a5eaad1b886c9ffee5f0a21b84ab  ui-armeabi-v7a-v1.0.9.koreplugin
+c60118eefd8078e37c37d1ed2f55632ecc4c3d9fc9f84f7a8f7f171e93e75037  ui-arm64-v8a-v1.0.10.koreplugin
+63747f5ff7fec6a17c27468787538cb15a41859f06fe2c26b399e09796636899  ui-armeabi-v7a-v1.0.10.koreplugin
 468cc2ec7c113cb218822626c75ec6244d32321507e5cf505bd6ff2899461478  demo-arm64-v8a-v1.0.0.koreplugin
 8885463180be80dfb1f879c94e50137bce873d8823ca7c6f57b51ea881a4efe7  demo-armeabi-v7a-v1.0.0.koreplugin
 1addea3c2d4ca50ec71dd52766e38bbfd5a7fd11426934ecb66dd3d0fd5e4b7e  nodeprojects-arm64-v8a-v1.0.0.koreplugin
 fb3b52b1d23d86a9fc8e592093e1d5345293a0cfa76a095e0386589f3c81d15f  nodeprojects-armeabi-v7a-v1.0.0.koreplugin
-8aa47c77ed6e7544626497ce2d52e3c79977e479af5f2999d45061c7f0532a62  zhuiju-arm64-v8a-v1.0.3.koreplugin
-d6d28acd3320ec3cd8b46b93087582f0a71e8f59459c7884ba2f7a58e216259d  zhuiju-armeabi-v7a-v1.0.3.koreplugin
+8db2cd7e09cf21b83f8649a4e8df492d69c45a5629944db7837ae69fcbf89925  zhuiju-arm64-v8a-v1.0.5.koreplugin
+479f89548d46ac1c2a8ea68b9c71d1871aee813dbc1526821e151d7c1d30a0d0  zhuiju-armeabi-v7a-v1.0.5.koreplugin

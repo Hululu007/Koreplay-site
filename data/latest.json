@@ -1,18 +1,18 @@
 {
   "distribution": "restricted",
-  "releaseTag": "v1.6.0-build.10",
-  "releaseName": "Koreplay v1.6.0-build.10",
-  "publishedAt": "2026-11-26T14:48:56Z",
-  "hostVersion": "1.0.7",
+  "releaseTag": "v1.6.0-build.11",
+  "releaseName": "Koreplay v1.6.0-build.11",
+  "publishedAt": "2026-11-27T04:53:17Z",
+  "hostVersion": "1.0.8",
   "hostApi": 1,
   "packages": [
     {
       "id": "host",
       "abi": "all",
-      "version": "1.0.7",
-      "file": "Koreplay-mobile-universal-v1.0.7.apk",
+      "version": "1.0.8",
+      "file": "Koreplay-mobile-universal-v1.0.8.apk",
       "size": 16348896,
-      "sha256": "1d278693a10aee6c6240ee7e5f7e2e589760c752ced43f7c158247b632147115"
+      "sha256": "f7ee4925550e184c36a2f171503e3371f7d7b3857efbdfd597447d135943525d"
     },
     {
       "id": "ijk",
@@ -113,18 +113,18 @@
     {
       "id": "ui",
       "abi": "arm64-v8a",
-      "version": "1.0.9",
-      "file": "ui-arm64-v8a-v1.0.9.koreplugin",
-      "size": 4584582,
-      "sha256": "4cff5d8ad549a5c2756158df1cd243c01f82dc1874eac3189859bebadecf576a"
+      "version": "1.0.10",
+      "file": "ui-arm64-v8a-v1.0.10.koreplugin",
+      "size": 4589844,
+      "sha256": "c60118eefd8078e37c37d1ed2f55632ecc4c3d9fc9f84f7a8f7f171e93e75037"
     },
     {
       "id": "ui",
       "abi": "armeabi-v7a",
-      "version": "1.0.9",
-      "file": "ui-armeabi-v7a-v1.0.9.koreplugin",
-      "size": 4584269,
-      "sha256": "c22991c8616788906534613652ba6926e000a5eaad1b886c9ffee5f0a21b84ab"
+      "version": "1.0.10",
+      "file": "ui-armeabi-v7a-v1.0.10.koreplugin",
+      "size": 4589531,
+      "sha256": "63747f5ff7fec6a17c27468787538cb15a41859f06fe2c26b399e09796636899"
     },
     {
       "id": "demo",
@@ -181,28 +181,28 @@
     {
       "id": "zhuiju",
       "abi": "arm64-v8a",
-      "version": "1.0.3",
+      "version": "1.0.5",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-arm64-v8a-v1.0.3.koreplugin",
-      "size": 429075,
-      "sha256": "8aa47c77ed6e7544626497ce2d52e3c79977e479af5f2999d45061c7f0532a62"
+      "file": "zhuiju-arm64-v8a-v1.0.5.koreplugin",
+      "size": 430945,
+      "sha256": "8db2cd7e09cf21b83f8649a4e8df492d69c45a5629944db7837ae69fcbf89925"
     },
     {
       "id": "zhuiju",
       "abi": "armeabi-v7a",
-      "version": "1.0.3",
+      "version": "1.0.5",
       "name": "追剧",
       "description": "追剧推荐、追更周历、详情页追更与剧评、高级配置",
       "kind": "extension",
       "mark": "ZH",
       "en": "zhuiju",
-      "file": "zhuiju-armeabi-v7a-v1.0.3.koreplugin",
-      "size": 429075,
-      "sha256": "d6d28acd3320ec3cd8b46b93087582f0a71e8f59459c7884ba2f7a58e216259d"
+      "file": "zhuiju-armeabi-v7a-v1.0.5.koreplugin",
+      "size": 430949,
+      "sha256": "479f89548d46ac1c2a8ea68b9c71d1871aee813dbc1526821e151d7c1d30a0d0"
     }
   ],
   "checksums": "./data/SHA256SUMS"
